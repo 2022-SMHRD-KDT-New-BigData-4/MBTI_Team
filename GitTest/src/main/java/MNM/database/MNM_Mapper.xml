@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapper 위치 지정 -->
+<mapper namespace="MNM.database.MNM_Mapper">
+
+	<!-- 회원가입 데이터 insert -->
+	<insert id="join" parameterType="MNM.model.MemberVO">
+		insert into member_info
+		(M_ID,
+		M_PW, M_NICK, M_GENDER, M_MBTI)
+		values(#{m_Id}, #{m_Pw}, #{m_Nick},
+		#{m_Gender}, #{m_Mbti})
+	</insert>
+
+	<!-- 로그인 데이터 select -->
+	<select id="login" parameterType="MNM.model.MemberVO"
+		resultType="MNM.model.MemberVO">
+		select * from member_info where M_ID=#{m_Id} and
+		M_PW=#{m_Pw}
+	</select>
+
+	<!-- MBTI 데이터 가져오기 -->
+	<select id="getMbti_data" parameterType="java.lang.String"
+		resultType="MNM.model.MbtiDTO">
+		select * from mbti_data where m_mbti=#{m_Mbti}
+	</select>
+
+	<!-- 회원가입 시 mbti 데이터 보내고 장르 3개 뽑아오기 -->
+	<select id="getSong_random" parameterType="java.lang.String"
+		resultType="MNM.model.MbtiDTO">
+		SELECT GENRE_1, GENRE_2, GENRE_3
+		FROM MBTI_INFO
+		WHERE M_MBTI
+		= #{m_Mbti}
+	</select>
+
+	<!-- 장르 데이터 보내고 랜덤 노래 4개씩 뽑아오기 -->
+	<select id="getSong_data" parameterType="MNM.model.MbtiDTO"
+		resultType="MNM.model.MbtiDTO">
+		SELECT *
+		FROM (
+		SELECT song_seq, singer, song_name, DBMS_RANDOM.VALUE(1,
+		100) AS rand_value
+		FROM song_info
+		WHERE SONG_GENRE = #{genre_arr} AND
+		ROWNUM <![CDATA[<]]>
+		101
+		ORDER BY DBMS_RANDOM.VALUE
+		)
+		WHERE ROWNUM <![CDATA[<]]>
+		5
+	</select>
+
+	<!-- like 버튼 누르면 그 노래 seq 보내고 추천곡 받아오기 -->
+	<select id="getRec_data" parameterType="hashmap"
+		resultType="hashmap">
+		select *
+		from recosong_info
+		<foreach collection="song_seq" open="(" close=")"
+			separator=",">
+			song_seq = #{song_seq.value}
+		</foreach>
+	</select>
+
+
+
+
+</mapper>

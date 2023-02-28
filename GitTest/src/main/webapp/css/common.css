@@ -1,0 +1,330 @@
+@charset 'utf-8';
+
+/* 웹폰트 설정------------------------------------ */
+/* 나눔스퀘어 웹폰트 */
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 300;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumSquare_acL.woff2") format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 400;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumSquare_acR.woff2") format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 500;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumSquare_acB.woff2") format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 700;
+    font-style: normal;
+    src: url("https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumSquare_acEB.woff2") format('woff2');
+    font-display: swap;
+}
+
+/* 잘난체 웹폰트 */
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 자주 쓰는 것 */
+.clearFix {
+    clear: both;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.mt80 {
+    margin-top: 80px;
+}
+
+.dis-non {
+    display: none !important;
+}
+
+/* 배경색 */
+body {
+    background-color: #020202;
+    font-family: 'NanumSquare';
+    color: #fff;
+}
+
+/* header 영역------------------------------------------ */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #020202;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+nav {
+    width: 96%;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+h1 {
+    position: absolute;
+}
+
+/* util menu */
+.util-menu {
+    position: absolute;
+    right: 0;
+    margin-right: 2%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: default(flex-start);
+    align-items: center;
+}
+
+.util-menu li {
+    display: list-item;
+}
+.util-menu li:first-child {
+    margin-right: 9px;
+}
+.util-menu li:last-child {
+    margin-left: 9px;
+}
+
+.util-menu li a {
+    font-size: 1.05rem;
+    color: #b9b9b9;
+}
+
+.util-menu li a:hover {
+    color: #fff;
+}
+
+.util-menu li a img {
+    margin-right: 5px;
+}
+
+/* main-menu */
+.main-menu {
+    margin: 0 auto;
+    display: flex;
+}
+
+.main-menu li:not(:last-child) {
+    margin-right: 80px;
+}
+
+.main-menu li a {
+    font-size: 1.05rem;
+    color: #fff;
+}
+
+/* main menu 마우스 오버 효과 */
+
+.main-menu li a:hover {
+    color: #fff;
+}
+.main-menu span {
+    position: relative;
+    font-weight: bold;
+    color: #fff;
+}
+.main-menu span::after {
+    content: '';
+    display: block;
+    margin-bottom: -2px;
+    width: 0;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #3d3dff;
+    z-index: -10;
+}
+.main-menu li a:hover span::after {
+    width: 100%;
+    padding: 0 6px;
+    margin-left: -6px;
+    transition: width 0.3s;
+}
+
+.container-sub {
+    margin: 90px auto 100px;
+    width: 1400px;
+    min-width: 1200px;
+}
+
+.sub-con {
+    padding-top: 90px;
+}
+
+.page-tit {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: 'NanumSquare';
+    margin-bottom: 40px;
+}
+
+
+/* 모달 팝업 */
+/* 노래 담기 popUp ------------------------------------ */
+/* The Modal (background) */
+
+.modal-wrap {
+    min-width: 900px;
+    position: relative;
+    top: 30%;
+    box-sizing: border-box;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0,0,0);
+    /* Fallback color */
+    background-color: rgba(0,0,0,0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+
+.modal-icon {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    border-radius: 50%;
+    background-image: url(../img/pop_i.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #8b74ff;
+    
+}
+
+.modal-content {
+    margin: 0 auto;
+    border-radius: 30px;
+    background-color: #222222;
+    padding-top: 80px;
+    /* 15% from the top and centered */
+    width: 600px;
+    text-align: center;
+    font-family: 'NanumSquare';
+    /* Could be more or less, depending on screen size */
+}
+
+.modal-tit {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.modal-bar {
+    display: block;
+    width: 27px;
+    height: 3px;
+    background-color: #555;
+    margin: 20px auto;
+}
+
+.modal-text {
+    margin-bottom: 30px;
+    font-size: 1.04rem;
+    opacity: .8;
+}
+
+.modal-content input {
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: #222222;
+    font-family: 'NanumSquare';
+    font-size: 1.2rem;
+    padding: 15px 17px;
+    margin-bottom: 40px;
+    
+}
+
+.btn-wrap {
+    background-image: linear-gradient(to right, #8e78ff 0%, #4420ff 100%);
+    box-sizing: border-box;
+}
+
+.btn-wrap {
+    display: flex;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.btn-wrap a {
+    padding: 20px 0;
+
+    width: 50%;
+    display: block;
+    color: #fff;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
