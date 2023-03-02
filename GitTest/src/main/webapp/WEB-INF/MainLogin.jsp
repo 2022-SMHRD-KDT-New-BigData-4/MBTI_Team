@@ -40,7 +40,7 @@
 				</a></li>
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
 				</a></li>
-				<li><a href="#"> <span><img src="./img/search_i.png"
+				<li><a href="GoPlay.do"> <span><img src="./img/search_i.png"
 							alt=""> 검색</span>
 				</a></li>
 			</ul>

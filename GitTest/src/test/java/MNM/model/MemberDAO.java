@@ -110,17 +110,22 @@ public class MemberDAO {
 		return song_data;
 	}
 
-//	public void getRec_song(String[] song_namelst) {
-//		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-//
-//		List<MbtiDTO> song_data = null;
-//		try {
-//			song_data = sqlSession.selectList("getRec_data", song_namelst);
-//		} finally {
-//			sqlSession.close();
-//		}
-//
-//		return song_data;
-//	}
+
+	public void getRec_song(int[] song_seq) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+		Map<String, Object> songSeq_list = new HashMap<>();
+		songSeq_list.put("song_seq", song_seq);
+		
+		List<MbtiDTO> song_data = null;
+		try {
+			song_data = sqlSession.selectList("getRec_data", song_seq);
+			System.out.println("rec : " + song_data);
+		} finally {
+			sqlSession.close();
+		}
+
+		//return song_data;
+	}
 
 }

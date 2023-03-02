@@ -56,8 +56,6 @@ public class JoinService implements Command {
 		}
 		
 		
-		
-		
 		// 6. result에 따른 페이지 이동(일단 로그인메인으로)
 		String moveURL = null;
 		if (result > 0) {

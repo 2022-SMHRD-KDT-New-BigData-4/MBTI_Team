@@ -160,7 +160,6 @@ $('.like-btn').change(function() {
 	let song_seq = $(this).closest("tr").find("td:nth-child(4)").text();
 	song_seqlst.push(song_seq);
 	console.log(song_seqlst);
-
 })
 
 $('.next-btn').click(function() {

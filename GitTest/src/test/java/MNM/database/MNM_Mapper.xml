@@ -57,13 +57,14 @@
 	<select id="getRec_data" parameterType="hashmap"
 		resultType="hashmap">
 		select *
-		from recosong_info
-		<foreach collection="song_seq" open="(" close=")"
-			separator=",">
-			song_seq = #{song_seq.value}
+		from song_info
+		where song_seq in
+		<foreach collection="song_seq" item="song_seq" index="index"
+			open="(" close=")" separator=",">
+			#{song_seq1}
 		</foreach>
-	</select>
 
+	</select>
 
 
 

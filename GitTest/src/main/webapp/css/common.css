@@ -58,6 +58,7 @@
 
 /* 배경색 */
 body {
+
     background-color: #020202;
     font-family: 'NanumSquare';
     color: #fff;
@@ -75,6 +76,7 @@ header {
 }
 
 nav {
+	min-width: 1400px;
     width: 96%;
     height: 90px;
     margin: 0 auto;

@@ -18,10 +18,10 @@ public class MbtiDTO {
    private String genre_3;
    private String song_name;
    private String singer;
-   private String song_seq;
+   private int song_seq;
    
    
-   public void song_data(String song_name, String singer, String song_seq) {
+   public void song_data(String song_name, String singer, int song_seq) {
 		this.song_name = song_name;
 		this.singer = singer;
 		this.song_seq = song_seq;
@@ -48,11 +48,11 @@ public MbtiDTO() {
 	return song_name;
 }
 
-public String getSong_seq() {
+public int getSong_seq() {
 	return song_seq;
 }
 
-public void setSong_seq(String song_seq) {
+public void setSong_seq(int song_seq) {
 	this.song_seq = song_seq;
 }
 
