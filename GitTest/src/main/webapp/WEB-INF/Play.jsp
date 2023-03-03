@@ -27,23 +27,17 @@
                     <a href="#"><img src="./img/logo.png" alt=""></a>
                 </h1>
                 <ul class="main-menu">
-                    <li>
-                        <a href="MbtiMusic.html">
-                            <span>MBTI 추천 음악</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="MyList.html">
-                            <span>My 리스트</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span><img src="./img/search_i.png" alt="">
-                                검색</span>
-                        </a>
-                    </li>
-                </ul>
+				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
+				</a></li>
+				<li><a href="#"> <span>My 리스트</span>
+				</a></li>
+				<!-- 
+				<li><a href="GoMyList.do"> <span>My 리스트</span>
+				</a></li>
+				<li><a href="GoPlay.do"> <span><img
+							src="./img/search_i.png" alt=""> 검색</span>
+				</a></li> -->
+			</ul>
                 <ul class="util-menu dis-non">
                     <ul class="util-menu">
                         <li>

@@ -87,5 +87,6 @@
 		(select song_seq from recosong_info where mb_id=#{m_Id}) C
 		where A.song_seq = C.song_seq and b.m_id = #{m_Id}
 	</select>
+	
 
 </mapper>

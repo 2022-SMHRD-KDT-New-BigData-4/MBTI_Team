@@ -112,13 +112,13 @@ public class MemberDAO {
    }
 
 // 7. 로그인 성공 시, mbti 앨범 선택시 메인페이지에 mbti 데이터 불러오기 위한 메소드
-   public MbtiDTO getMbti_data(String m_mbti) {
+   public MbtiDTO getMbti_data(String mMbti) {
 
       SqlSession sqlSession = sqlSessionFactory.openSession(true);
 
       MbtiDTO mbti_data = null;
       try {
-         mbti_data = sqlSession.selectOne("getMbti_data", m_mbti);
+         mbti_data = sqlSession.selectOne("getMbti_data", mMbti);
       } finally {
          sqlSession.close();
       }

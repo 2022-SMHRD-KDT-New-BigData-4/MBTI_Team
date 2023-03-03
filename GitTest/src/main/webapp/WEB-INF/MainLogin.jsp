@@ -38,11 +38,14 @@
 			<ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
+				<li><a href="#"> <span>My 리스트</span>
+				</a></li>
+				<!-- 
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
 				</a></li>
 				<li><a href="GoPlay.do"> <span><img
 							src="./img/search_i.png" alt=""> 검색</span>
-				</a></li>
+				</a></li> -->
 			</ul>
 			<ul class="util-menu dis-non">
 				<ul class="util-menu">
@@ -123,7 +126,7 @@
 							<td col="col" width="45%">곡 정보</td>
 							<td>아티스트명</td>
 							<td col="col" width="10%">재생</td>
-							<td col="col" width="10%">담기</td>
+							<td col="col" width="10%">좋아요</td>
 						</tr>
 						<c:forEach items="${music_data}" var="music">
 							<tr class="trHover">
@@ -137,14 +140,15 @@
 									</button>
 								</td>
 								<td>
-									<button class="downBtn item" type="button" alt="담기버튼">
-										<img src="./img/download_off_i.png"
-											onmouseover="this.src='./img/download_on_i.png'"
-											onmouseout="this.src='./img/download_off_i.png'">
+									<button class="downBtn item" type="button" alt="좋아요 버튼">
+										<img src="./img/like_off.png"
+											onmouseover="this.src='./img/like_on.png'"
+											onmouseout="this.src='./img/like_off.png'">
 									</button>
 								</td>
 							</tr>
 						</c:forEach>
+						
 
 
 					</table>
