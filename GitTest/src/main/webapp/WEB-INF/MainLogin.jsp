@@ -38,7 +38,7 @@
 			<ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
-				<li><a href="#"> <span>My 리스트</span>
+				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
 				</a></li>
 				<!-- 
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
@@ -69,28 +69,6 @@
 			</div>
 		</nav>
 	</header>
-
-	<!-- 팝업 -->
-	<div id="myModal" class="modal">
-
-		<!-- Modal content -->
-		<div class="modal-wrap">
-			<span class="modal-icon"></span>
-			<div class="modal-content">
-
-				<p class="modal-tit">My list 만들기</p>
-				<span class="modal-bar"></span>
-				<p class="modal-text">나만의 음악 리스트를 만들어 자주 듣는 음악을 담아 보세요!</p>
-				<input type="text" id="inputCol" placeholder="폴더명을 입력해 주세요."
-					style="color: #555">
-				<div class="btn-wrap">
-					<a href="#" id="add_song">확인</a> <a href="#" id="close">닫기</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 팝업 끝 -->
-
 
 	<div class="container-sub">
 		<section class="sub-con">
@@ -140,11 +118,7 @@
 									</button>
 								</td>
 								<td>
-									<button class="downBtn item" type="button" alt="좋아요 버튼">
-										<img src="./img/like_off.png"
-											onmouseover="this.src='./img/like_on.png'"
-											onmouseout="this.src='./img/like_off.png'">
-									</button>
+									<input type="checkbox" class="like-btn" name="" value="">
 								</td>
 							</tr>
 						</c:forEach>

@@ -38,7 +38,7 @@
 			<ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
-				<li><a href="#"> <span>My 리스트</span>
+				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
 				</a></li>
 				<!-- 
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
@@ -140,11 +140,7 @@
 									</button>
 								</td>
 								<td>
-									<button class="downBtn item" type="button" alt="좋아요 버튼">
-										<img src="./img/like_off.png"
-											onmouseover="this.src='./img/like_on.png'"
-											onmouseout="this.src='./img/like_off.png'">
-									</button>
+									<input type="checkbox" class="like-btn" name="" value="">
 								</td>
 							</tr>
 						</c:forEach>

@@ -162,11 +162,6 @@ $('.like-btn').change(function() {
 	console.log(song_seqlst);
 })*/
 
-$('#video').click(function(){
-	
-})
-
-
 /*
 $('.next-btn').click(function() {
 	$.ajax({

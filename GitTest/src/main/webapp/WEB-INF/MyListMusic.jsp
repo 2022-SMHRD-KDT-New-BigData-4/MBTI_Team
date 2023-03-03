@@ -30,7 +30,7 @@
 			<ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
-				<li><a href="#"> <span>My 리스트</span>
+				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
 				</a></li>
 				<!-- 
 				<li><a href="GoMyList.do"> <span>My 리스트</span>

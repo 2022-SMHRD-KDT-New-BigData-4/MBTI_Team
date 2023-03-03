@@ -1,3 +1,4 @@
+<%@page import="MNM.model.MbtiDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="MNM.model.MusicDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -24,12 +25,12 @@
         <header>
             <nav>
                 <h1>
-                    <a href="#"><img src="./img/logo.png" alt=""></a>
+                    <a href="GoMainLogin.do"><img src="./img/logo.png" alt=""></a>
                 </h1>
                 <ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
-				<li><a href="#"> <span>My 리스트</span>
+				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
 				</a></li>
 				<!-- 
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
@@ -41,25 +42,36 @@
                 <ul class="util-menu dis-non">
                     <ul class="util-menu">
                         <li>
-                            <a href="JoinForm.html">JOIN</a>
+                            <a href="GoJoinForm.do">JOIN</a>
                         </li>
                         <li>
-                            <a href="LoginForm.html"><img src="./img/util_login_i.png" alt="">
+                            <a href="GoLoginForm.do"><img src="./img/util_login_i.png" alt="">
                                 LOGIN</a>
                         </li>
                     </ul>
             </ul>
-            <div class="profile">
-                <a href="#"><img src="./img/profile_icon.png" alt=""></a>
-            </div>
+    <%
+		List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
+    	String videoUrl = request.getParameter("video_url");
+    	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
+	%>
+            <!-- 프로필 클릭 시 -->
+			<div id="profilePop" class="profile-wrap" style="display: none;">
+				<ul class="profile-list">
+					<li><%=mbti_data.getM_MBTI()%> ${member.m_Nick}님</li>
+					<li><a href="LogoutService.do"><img
+							src="./img/logout_i.png" alt=""> 로그아웃</a></li>
+				</ul>
+			</div>
+			<!-- 프로필 -->
+			<div id="profileClick" class="profile">
+				<a href="javascript:doDisplay();"><img
+					src="./img/profile_icon.png" alt=""></a>
+			</div>
         </nav>
     </header>
 
 
-    <%
-		List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
-    	String videoUrl = request.getParameter("video_url");
-	%>
     <section class="play-con">
         <div class="play-container">
             <div id="playView">
