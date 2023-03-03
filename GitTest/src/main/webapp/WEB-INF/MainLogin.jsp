@@ -94,6 +94,40 @@
             </div>
          </div>
 
+<<<<<<< HEAD
+         <div>
+            <p class="page-tit mt80 fadeInUp_obj2 "><%=mbti_data.getM_MBTI()%>
+               추천 음악
+            </p>
+            <form action="GoPlay.do">
+               <table class="music-list wrap">
+                  <tr>
+                     <td col="col" width="45%">곡 정보</td>
+                     <td>아티스트명</td>
+                     <td col="col" width="10%">재생</td>
+                     <td col="col" width="10%">좋아요</td>
+                  </tr>
+                  <c:forEach items="${music_data}" var="music">
+                     <tr class="trHover">
+                        <td>${music.song_name}</td>
+                        <td>${music.singer}</td>
+                        <input type="hidden" name = "play_check" value ="main">
+                        <td>
+                           <button class="play-music" name="video_url" value="${music.video_src}" type="submit" alt="재생버튼">
+                              <img src="./img/play_off_i.png"
+                                 onmouseover="this.src='./img/play_on_i.png'"
+                                 onmouseout="this.src='./img/play_off_i.png'">
+                           </button>
+                        </td>
+                        <td>
+                           <input type="checkbox" class="like-btn" name="" value="">
+                        </td>
+                     </tr>
+                  </c:forEach>
+               </table>
+            </form>
+         </div>
+=======
          <div>
             <p class="page-tit mt80 fadeInUp_obj2 "><%=mbti_data.getM_MBTI()%>
                추천 음악
@@ -126,6 +160,7 @@
                </table>
             </form>
          </div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 
       </section>
 
