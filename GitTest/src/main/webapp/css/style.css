@@ -243,6 +243,9 @@ main {
 .music-list tr td:nth-child(4) {
     text-align: center;
 }
+.music-list tr input~td+td {
+    text-align: center;
+}
 
 .music-list tr td a {
     display: inline-block;
@@ -259,7 +262,6 @@ main {
     width: 1400px;
     display: flex;
     justify-content: space-between;
-    overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 60px;
 }
