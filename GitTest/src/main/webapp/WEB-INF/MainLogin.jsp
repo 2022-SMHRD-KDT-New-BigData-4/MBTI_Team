@@ -122,9 +122,6 @@
 								</td>
 							</tr>
 						</c:forEach>
-						
-
-
 					</table>
 				</form>
 			</div>
@@ -134,87 +131,22 @@
 		<section class="other-mbti">
 			<p class="page-tit mt80">다른 MBTI 추천 음악</p>
 			<ul class="other-list list-mr">
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL() %>"> <img src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ISTJ</span> <span class="thum-text">청렴결백
-							논리주의자</span>
+					</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL() %></span> 
 				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2() %>"> <img src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ISFJ</span> <span class="thum-text">용감한
-							수호자</span>
+					</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2() %></span> 
 				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL() %>"> <img src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">INFJ</span> <span class="thum-text">선의의
-							옹호자</span>
+					</span> <span class="thum-tit"><%=mbti_data.getBAD_REL() %></span> 
 				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL2() %>"> <img src="./img/thum_<%=mbti_data.getBAD_REL2().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">INTJ</span> <span class="thum-text">용의주도한
-							전략가</span>
+					</span> <span class="thum-tit"><%=mbti_data.getBAD_REL2() %></span> 
 				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ISTP</span> <span class="thum-text">만능
-							재주꾼</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ISFP</span> <span class="thum-text">호기심
-							많은 예술가</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">INFP</span> <span class="thum-text">열정적인
-							중재자</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">INTP</span> <span class="thum-text">논리적인
-							사색가</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ESTP</span> <span class="thum-text">모험을
-							즐기는 사업가</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ESFP</span> <span class="thum-text">자유로운
-							영혼의 연예인</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ENFP</span> <span class="thum-text">재기발랄한
-							활동가</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ENTP</span> <span class="thum-text">논쟁을
-							즐기는 변론가</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ESTJ</span> <span class="thum-text">엄격한
-							관리자</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ESFJ</span> <span class="thum-text">사교적인
-							외교관</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ENFJ</span> <span class="thum-text">정의로운
-							사회운동가</span>
-				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit">ENTJ</span> <span class="thum-text">대담한
-							통솔자</span>
-				</a></li>
-
 			</ul>
 		</section>
 

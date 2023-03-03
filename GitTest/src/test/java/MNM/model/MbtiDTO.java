@@ -12,11 +12,56 @@ public class MbtiDTO {
    private String TAG4;
    private String MBTI_LONGEXP;
    private String MBTI_JOB;
+   private String GOOD_REL;
+   private String GOOD_REL2;
+   private String BAD_REL;
+   private String BAD_REL2;
    
    
 public MbtiDTO() {
 	   
    }
+
+
+public String getGOOD_REL() {
+	return GOOD_REL;
+}
+
+
+public void setGOOD_REL(String gOOD_REL) {
+	GOOD_REL = gOOD_REL;
+}
+
+
+public String getGOOD_REL2() {
+	return GOOD_REL2;
+}
+
+
+public void setGOOD_REL2(String gOOD_REL2) {
+	GOOD_REL2 = gOOD_REL2;
+}
+
+
+public String getBAD_REL() {
+	return BAD_REL;
+}
+
+
+public void setBAD_REL(String bAD_REL) {
+	BAD_REL = bAD_REL;
+}
+
+
+public String getBAD_REL2() {
+	return BAD_REL2;
+}
+
+
+public void setBAD_REL2(String bAD_REL2) {
+	BAD_REL2 = bAD_REL2;
+}
+
 
 public String getMBTI_IMG() {
 	return MBTI_IMG;

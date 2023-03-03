@@ -60,8 +60,8 @@
 			</div>
 			<!-- 프로필 -->
 			<div id="profileClick" class="profile">
-				<a onclick="doDisplay()">
-				<img src="./img/profile_icon.png" alt=""></a>
+				<a onclick="doDisplay()"> <img src="./img/profile_icon.png"
+					alt=""></a>
 			</div>
 		</nav>
 	</header>
@@ -99,171 +99,22 @@
 						<td col="col" width="45%">아티스트명</td>
 						<td>재생</td>
 					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-					<tr class="trHover">
-						<td>곡 정보 영역입니다</td>
-						<td>아티스트명 입니다</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
+					<c:forEach items="${music_data}" var="music">
+						<tr class="trHover">
+							<td>${music.song_name}</td>
+							<td>${music.singer}</td>
+							<td>
+								<button class="play-music" name="video_url"
+									value="${music.video_src}" type="submit" alt="재생버튼">
+									<img src="./img/play_off_i.png"
+										onmouseover="this.src='./img/play_on_i.png'"
+										onmouseout="this.src='./img/play_off_i.png'">
+								</button>
+							</td>
+							<td><input type="checkbox" class="like-btn" name="" value="">
+							</td>
+						</tr>
+					</c:forEach>
 				</table>
 			</div>
 
