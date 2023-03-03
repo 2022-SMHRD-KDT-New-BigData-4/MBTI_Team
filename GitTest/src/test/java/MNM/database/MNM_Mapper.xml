@@ -68,25 +68,46 @@
 
 	<insert id="save_recSong" parameterType="MNM.model.MusicDTO">
 		insert into
-		recosong_info
-		(MB_ID, SONG_SEQ)
-		values(#{m_Id}, #{song_seq})
+		wishlist_info
+		(SONG_SEQ, M_ID)
+		values(#{song_seq},#{m_Id})
 	</insert>
 
 	<select id="login_getSong" parameterType="MNM.model.MbtiDTO"
-		resultType="MNM.model.MusicDTO">
-		<!-- select A.* from song_info A,
-		(select A.rec_song1,
-		A.rec_song2, A.rec_song3
-		from rec_song A, (select song_seq from
-		recosong_info where mb_id=#{m_Id}) B
-		where A.song_seq in B.song_seq) B
-		where A.song_seq in (B.rec_song1, B.rec_song2, B.rec_song3)-->
-		select A.*
-		from song_info A, member_info B,
-		(select song_seq from recosong_info where mb_id=#{m_Id}) C
-		where A.song_seq = C.song_seq and b.m_id = #{m_Id}
-	</select>
+	resultType="MNM.model.MusicDTO">
+	 <!-- select A.* from song_info A, (select A.rec_song1, A.rec_song2, A.rec_song3 
+		from rec_song A, (select song_seq from recosong_info where mb_id=#{m_Id}) 
+		B where A.song_seq in B.song_seq) B where A.song_seq in (B.rec_song1, B.rec_song2, 
+		B.rec_song3)
+	select A.* from song_info A, member_info B, (select song_seq from wishlist_info 
+			where m_id=#{m_Id}) C where A.song_seq = C.song_seq and b.m_id = #{m_Id}
+	SELECT A.*
+	FROM song_info A, member_info B,
+	(SELECT song_seq
+	FROM wishlist_info
+	WHERE (m_id, reg_date) IN (
+	SELECT m_id, reg_date
+	FROM (
+	SELECT m_id, reg_date,
+	ROW_NUMBER() OVER (ORDER BY reg_date DESC)
+	FROM wishlist_info
+	WHERE m_id = #{m_id}
+	)
+	WHERE rownum <![CDATA[<]]>
+	7)
+	) C
+	WHERE A.song_seq = C.song_seq AND B.m_id = #{m_id}-->
+	
+	SELECT A.*
+	FROM song_info A, member_info B,
+	(SELECT song_seq, reg_date
+	FROM wishlist_info
+	WHERE m_id = #{m_id}
+	ORDER BY reg_date DESC
+	) C
+	WHERE A.song_seq = C.song_seq
+	AND B.m_id = #{m_id} AND ROWNUM <![CDATA[<]]> 15
+</select>
 	
 
 </mapper>
