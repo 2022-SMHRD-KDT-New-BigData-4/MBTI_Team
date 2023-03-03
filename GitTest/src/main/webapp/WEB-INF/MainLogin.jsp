@@ -26,10 +26,11 @@
 </head>
 <body>
 	<%
-   MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
+	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
 
-   List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
-   %>
+	List<MusicDTO> music_data = (List<MusicDTO>) session.getAttribute("music_data");
+	%>
+
 	<header>
 		<nav>
 			<h1>
@@ -38,7 +39,7 @@
 			<ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
-				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
+				<li><a href="MyListService.do"> <span>My 리스트</span>
 				</a></li>
 				<!-- 
             <li><a href="GoMyList.do"> <span>My 리스트</span>
@@ -119,7 +120,6 @@
 											onmouseout="this.src='./img/play_off_i.png'">
 									</button>
 								</td>
-								
 								<td><input type="checkbox" class="like-btn hi" name="main_like_song"
 									value="${music.song_seq}"></td>
 							</tr>
@@ -127,46 +127,54 @@
 					</table>
 				</form>
 			</div>
-		</section>
 
+		</section>
 
 
 		<section class="other-mbti">
 			<p class="page-tit mt80">다른 MBTI 추천 음악</p>
-			<ul class="other-list list-mr">
-				<li><a
-					href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL() %>">
-						<img
-						src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase() %>.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL() %></span>
-				</a></li>
-				<li><a
-					href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2() %>">
-						<img
-						src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase() %>.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2() %></span>
-				</a></li>
-				<li><a
-					href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL() %>"> <img
-						src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase() %>.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit"><%=mbti_data.getBAD_REL() %></span>
-				</a></li>
-				<li><a
-					href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL2() %>">
-						<img
-						src="./img/thum_<%=mbti_data.getBAD_REL2().toLowerCase() %>.png"
-						alt=""> <span class="over-box"> <i></i>
-					</span> <span class="thum-tit"><%=mbti_data.getBAD_REL2() %></span>
-				</a></li>
-			</ul>
+			<div class="other-mbti-wrap">
+				<div class="mbti-list">
+					<p class="other-tit">· <%=mbti_data.getM_MBTI()%>와 잘 맞는 궁합</p>
+					<ul class="other-list list-mr">
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL()%></span>
+						</a></li>
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2()%></span>
+						</a></li>
+					</ul>
+				</div>
+				<div class="mbti-list">
+					<p class="other-tit">· <%=mbti_data.getM_MBTI()%>와 잘 안맞는 궁합</p>
+					<ul class="other-list list-mr">
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getBAD_REL()%></span>
+						</a></li>
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL2()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getBAD_REL2().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getBAD_REL2()%></span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
 		</section>
 
-	</div>
-
-	<script src="./js/popup.js"></script>
-	<script src="./js/main.js"></script>
+		<script src="./js/popup.js"></script>
 </body>
 </html>

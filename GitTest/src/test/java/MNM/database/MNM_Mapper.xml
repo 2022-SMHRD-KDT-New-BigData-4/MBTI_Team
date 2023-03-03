@@ -125,19 +125,27 @@
     where A.song_seq = B.song_seq -->
     
     select A.* from song_info A, 
-    (select A.rec_song1, A.rec_song2, A.rec_song3 from REC_SONG A,  
+    (select A.rec_song1, A.rec_song2 from REC_SONG A,  
     (SELECT A.*
 	FROM song_info A, member_info B,
 	(SELECT song_seq, reg_date
 	FROM wishlist_info
-	WHERE m_id = #{m_id}
+	WHERE m_id = #{m_Id}
 	ORDER BY reg_date DESC
 	) C
 	WHERE A.song_seq = C.song_seq
-	AND B.m_id = #{m_id} AND ROWNUM <![CDATA[<]]> 6) B
+	AND B.m_id = #{m_Id} AND ROWNUM <![CDATA[<]]> 10) B
     where A.song_seq = B.song_seq) B
-    where A.song_seq in (B.rec_song1,B.rec_song2,B.rec_song3)
+    where A.song_seq in (B.rec_song1,B.rec_song2)
     
+</select>
+
+
+<select id="getMyList_song" parameterType="java.lang.String" resultType="MNM.model.MusicDTO">
+    select A.* 
+    from song_info A, 
+    (select * from wishlist_info where m_id = #{m_Id}) B 
+    where A.song_seq = B.song_Seq
 </select>
 	
 
