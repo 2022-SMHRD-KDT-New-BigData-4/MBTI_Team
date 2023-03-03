@@ -154,26 +154,48 @@
       </section>
 
       <section class="other-mbti">
-         <p class="page-tit mt80">다른 MBTI 추천 음악</p>
-         <ul class="other-list list-mr">
-            <li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL() %>"> <img src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase() %>.png"
-                  alt=""> <span class="over-box"> <i></i>
-               </span> <span class="thum-tit"><%=mbti_data.getGOOD_REL() %></span> 
-            </a></li>
-            <li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2() %>"> <img src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase() %>.png"
-                  alt=""> <span class="over-box"> <i></i>
-               </span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2() %></span> 
-            </a></li>
-            <li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL() %>"> <img src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase() %>.png"
-                  alt=""> <span class="over-box"> <i></i>
-               </span> <span class="thum-tit"><%=mbti_data.getBAD_REL() %></span> 
-            </a></li>
-            <li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL2() %>"> <img src="./img/thum_<%=mbti_data.getBAD_REL2().toLowerCase() %>.png"
-                  alt=""> <span class="over-box"> <i></i>
-               </span> <span class="thum-tit"><%=mbti_data.getBAD_REL2() %></span> 
-            </a></li>
-         </ul>
-      </section>
+			<p class="page-tit mt80">다른 MBTI 추천 음악</p>
+			<div class="other-mbti-wrap">
+				<div class="mbti-list">
+					<p class="other-tit">· <%=mbti_data.getM_MBTI()%>와 잘 맞는 궁합</p>
+					<ul class="other-list list-mr">
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL()%></span>
+						</a></li>
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2()%></span>
+						</a></li>
+					</ul>
+				</div>
+				<div class="mbti-list">
+					<p class="other-tit">· <%=mbti_data.getM_MBTI()%>와 잘 안맞는 궁합</p>
+					<ul class="other-list list-mr">
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getBAD_REL()%></span>
+						</a></li>
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL2()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getBAD_REL2().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getBAD_REL2()%></span>
+						</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
 
    </div>
 

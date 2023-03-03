@@ -67,7 +67,7 @@
 
 	<div class="container-sub other-mbti">
 		<section class="sub-con">
-			<ul class="other-list mbti-list">
+			<ul class="other-list mbti-list mbti-flex">
 				<li><a href="MbtiMusicService.do?mbti=ISTJ"> <img
 						src="./img/thum_istj.png" alt=""> <span
 						class="over-box"> <i></i>
