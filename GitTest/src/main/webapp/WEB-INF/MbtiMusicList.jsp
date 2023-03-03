@@ -133,7 +133,7 @@
 								<td>${song.song_name}</td>
 								<td>${song.singer}</td>
 								<td>
-									<button class="play-music" name="video" value="${song.video_src}" type="submit" alt="재생버튼">
+									<button class="play-music" name="video_url" value="${song.video_src}" type="submit" alt="재생버튼">
 										<img src="./img/play_off_i.png"
 											onmouseover="this.src='./img/play_on_i.png'"
 											onmouseout="this.src='./img/play_off_i.png'">
@@ -152,20 +152,24 @@
 
 		<section class="other-mbti">
 			<p class="page-tit mt80">다른 MBTI 추천 음악</p>
+			<ul>
+				<li><%=mbti_data.getM_MBTI()%>와 잘 맞는 궁합</li>
+				<li><%=mbti_data.getM_MBTI()%>와 안 맞는 궁합</li>
+			</ul>
 			<ul class="other-list list-mr">
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL() %>"> <img src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
 					</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL() %></span> 
 				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2() %>"> <img src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
 					</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2() %></span> 
 				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL() %>"> <img src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
 					</span> <span class="thum-tit"><%=mbti_data.getBAD_REL() %></span> 
 				</a></li>
-				<li><a href="#"> <img src="./img/music_list_thum.png"
+				<li><a href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL2() %>"> <img src="./img/thum_<%=mbti_data.getBAD_REL2().toLowerCase() %>.png"
 						alt=""> <span class="over-box"> <i></i>
 					</span> <span class="thum-tit"><%=mbti_data.getBAD_REL2() %></span> 
 				</a></li>

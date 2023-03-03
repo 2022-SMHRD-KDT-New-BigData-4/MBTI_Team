@@ -52,6 +52,7 @@
             </ul>
     <%
 		List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
+    	String song_name = request.getParameter("song_name");
     	String videoUrl = request.getParameter("video_url");
     	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
 	%>
@@ -75,7 +76,7 @@
     <section class="play-con">
         <div class="play-container">
             <div id="playView">
-                <p class="tit">My list 제목1</p>
+                <p class="tit"><%= song_name%></p>
                 <iframe id="video" src="<%= videoUrl%>">
                 </iframe>
             </div>
