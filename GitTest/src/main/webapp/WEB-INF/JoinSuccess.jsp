@@ -36,7 +36,7 @@
         <section class="join-success">
             <div>
                 <span></span>
-                <p>${MBTI} ${nickname}님</p>
+                <p>${member.m_Mbti} ${member.m_Nick}님</p>
                 <p>MNM 회원가입을 축하드립니다!</p>
                 <a href="GoLoginForm.do">로그인페이지로 이동</a>
             </div>

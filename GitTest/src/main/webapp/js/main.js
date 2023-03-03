@@ -155,27 +155,33 @@ function doDisplay() {
 }
 
 // 좋아요 버튼 클릭 시 데이터 저장
-let song_seqlst = [];
+/*let song_seqlst = [];
 $('.like-btn').change(function() {
 	let song_seq = $(this).closest("tr").find("td:nth-child(4)").text();
 	song_seqlst.push(song_seq);
 	console.log(song_seqlst);
+})*/
+
+$('#video').click(function(){
+	
 })
 
+
+/*
 $('.next-btn').click(function() {
 	$.ajax({
-		type: 'post',
 		url: 'JoinLikeService.do',
-		traditional: true,
-		data: { "song_seqlst": song_seqlst },
+		type: 'post',
+		dataType : "json",
+		traditional : true,
+		data: {"song_seqlst": song_seqlst},
 		success: function(data) {
 			alert("데이터전송 성공");
 		},
 		error: function(error) {
-			alert("에러");
+			alert("에러❤")
 		}
-
 	})
 })
-
+*/
 

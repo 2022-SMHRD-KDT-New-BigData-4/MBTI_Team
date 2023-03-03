@@ -29,7 +29,7 @@
 
 	<!-- 회원가입 시 mbti 데이터 보내고 장르 3개 뽑아오기 -->
 	<select id="getSong_random" parameterType="java.lang.String"
-		resultType="MNM.model.MbtiDTO">
+		resultType="MNM.model.MusicDTO">
 		SELECT GENRE_1, GENRE_2, GENRE_3
 		FROM MBTI_INFO
 		WHERE M_MBTI
@@ -37,8 +37,8 @@
 	</select>
 
 	<!-- 장르 데이터 보내고 랜덤 노래 4개씩 뽑아오기 -->
-	<select id="getSong_data" parameterType="MNM.model.MbtiDTO"
-		resultType="MNM.model.MbtiDTO">
+	<select id="getSong_data" parameterType="MNM.model.MusicDTO"
+		resultType="MNM.model.MusicDTO">
 		SELECT *
 		FROM (
 		SELECT song_seq, singer, song_name, DBMS_RANDOM.VALUE(1,
@@ -53,19 +53,39 @@
 		5
 	</select>
 
-	<!-- like 버튼 누르면 그 노래 seq 보내고 추천곡 받아오기 -->
-	<select id="getRec_data" parameterType="hashmap"
-		resultType="hashmap">
-		select *
-		from song_info
-		where song_seq in
-		<foreach collection="song_seq" item="song_seq" index="index"
-			open="(" close=")" separator=",">
-			#{song_seq1}
-		</foreach>
 
+	<!-- like 버튼 누르면 그 노래 seq 보내고 추천곡 받아오기 -->
+	<select id="getRec_data" parameterType="java.lang.String"
+		resultType="MNM.model.MusicDTO">
+		select * from song_info,
+		(SELECT REC_SONG1, REC_SONG2,
+		REC_SONG3
+		FROM REC_SONG
+		WHERE SONG_SEQ IN (${song_seq}))
+		where song_seq
+		in (REC_SONG1, REC_SONG2, REC_SONG3)
 	</select>
 
+	<insert id="save_recSong" parameterType="MNM.model.MusicDTO">
+		insert into
+		recosong_info
+		(MB_ID, SONG_SEQ)
+		values(#{m_Id}, #{song_seq})
+	</insert>
 
+	<select id="login_getSong" parameterType="MNM.model.MbtiDTO"
+		resultType="MNM.model.MusicDTO">
+		<!-- select A.* from song_info A,
+		(select A.rec_song1,
+		A.rec_song2, A.rec_song3
+		from rec_song A, (select song_seq from
+		recosong_info where mb_id=#{m_Id}) B
+		where A.song_seq in B.song_seq) B
+		where A.song_seq in (B.rec_song1, B.rec_song2, B.rec_song3)-->
+		select A.*
+		from song_info A, member_info B,
+		(select song_seq from recosong_info where mb_id=#{m_Id}) C
+		where A.song_seq = C.song_seq and b.m_id = #{m_Id}
+	</select>
 
 </mapper>

@@ -13,6 +13,7 @@ import MNM.command.Command;
 import MNM.model.MbtiDTO;
 import MNM.model.MemberDAO;
 import MNM.model.MemberVO;
+import MNM.model.MusicDTO;
 
 public class LoginService implements Command {
 
@@ -41,14 +42,12 @@ public class LoginService implements Command {
 			// 2-3. mbti 관련 데이터 session에 저장
 			session.setAttribute("mbti_data", mbti_data);
 			
-			// 3-1. 노래리스트 데이터 가져오기(아직 아님)
-			//List<MbtiDTO> song_data = dao.getSong_data();
+			// 3-1. 노래리스트 데이터 보내려고 아이디 가져오기
+			String id = result.getm_Id();
+			List<MusicDTO> music_data = dao.Login_getSong(id);
 			// 3-2. 조회한 정보를 request 영역에 담기
-			//request.setAttribute("song_data", song_data);
+			session.setAttribute("music_data", music_data);
 			
-			
-			
-
 			// 4. 로그인 메인페이지로 이동
 			moveURL = "MainLogin";
 		}else {

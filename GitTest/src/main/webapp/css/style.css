@@ -229,11 +229,14 @@ main {
     padding: 20px 0;
 }
 
+.music-list tr:nth-child(1) td {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
 .music-list tr td:nth-child(1),
 .music-list tr td:nth-child(2) {
     padding-left: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.3);
-    border-top: 1px solid rgba(255,255,255,0.3);
 }
 
 .music-list tr td:nth-child(3),

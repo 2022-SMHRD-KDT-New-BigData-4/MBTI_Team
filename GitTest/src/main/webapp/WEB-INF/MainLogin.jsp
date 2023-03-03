@@ -1,3 +1,4 @@
+<%@page import="MNM.model.MusicDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="MNM.model.MbtiDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -25,10 +26,9 @@
 </head>
 <body>
 	<%
-    MbtiDTO mbti_data = (MbtiDTO)session.getAttribute("mbti_data");
-    
-    List<MbtiDTO> song_data = (List<MbtiDTO>)request.getAttribute("song_data");
+	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
 
+	List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
 	%>
 	<header>
 		<nav>
@@ -40,8 +40,8 @@
 				</a></li>
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
 				</a></li>
-				<li><a href="GoPlay.do"> <span><img src="./img/search_i.png"
-							alt=""> 검색</span>
+				<li><a href="GoPlay.do"> <span><img
+							src="./img/search_i.png" alt=""> 검색</span>
 				</a></li>
 			</ul>
 			<ul class="util-menu dis-non">
@@ -54,7 +54,7 @@
 			<!-- 프로필 클릭 시 -->
 			<div id="profilePop" class="profile-wrap" style="display: none;">
 				<ul class="profile-list">
-					<li><%=mbti_data.getM_MBTI() %> ${member.m_Nick}님</li>
+					<li><%=mbti_data.getM_MBTI()%> ${member.m_Nick}님</li>
 					<li><a href="LogoutService.do"><img
 							src="./img/logout_i.png" alt=""> 로그아웃</a></li>
 				</ul>
@@ -93,60 +93,62 @@
 		<section class="sub-con">
 			<div class="mbti-info">
 				<div class="mbti-left fadeInUp_obj">
-					<img src=<%=mbti_data.getMBTI_IMG() %> alt="MBTI 이미지">
+					<img src=<%=mbti_data.getMBTI_IMG()%> alt="MBTI 이미지">
 				</div>
 				<div class="mbti-right fadeInUp_obj">
-					<p class="tit <%=mbti_data.getM_MBTI() %>-tit"><%=mbti_data.getM_MBTI() %><span
-							class="sub-tit <%=mbti_data.getM_MBTI() %>-sub-tit"><%=mbti_data.getMBTI_REP() %></span>
+					<p class="tit <%=mbti_data.getM_MBTI()%>-tit"><%=mbti_data.getM_MBTI()%><span
+							class="sub-tit <%=mbti_data.getM_MBTI()%>-sub-tit"><%=mbti_data.getMBTI_REP()%></span>
 					</p>
 					<span class="tit-bar"></span>
 					<ul class="mbti-tag">
-						<li><%=mbti_data.getTAG1() %></li>
-						<li><%=mbti_data.getTAG2() %></li>
-						<li><%=mbti_data.getTAG3() %></li>
-						<li><%=mbti_data.getTAG4() %></li>
+						<li><%=mbti_data.getTAG1()%></li>
+						<li><%=mbti_data.getTAG2()%></li>
+						<li><%=mbti_data.getTAG3()%></li>
+						<li><%=mbti_data.getTAG4()%></li>
 					</ul>
-					<p class="text"><%=mbti_data.getMBTI_LONGEXP() %></p>
-					<p class="job-tit"><%=mbti_data.getM_MBTI() %>에게 어울리는 직업은?
+					<p class="text"><%=mbti_data.getMBTI_LONGEXP()%></p>
+					<p class="job-tit"><%=mbti_data.getM_MBTI()%>에게 어울리는 직업은?
 					</p>
-					<p class="job-text"><%=mbti_data.getMBTI_JOB() %></p>
+					<p class="job-text"><%=mbti_data.getMBTI_JOB()%></p>
 				</div>
 			</div>
 
 			<div>
-				<p class="page-tit mt80 fadeInUp_obj2 "><%=mbti_data.getM_MBTI() %>
+				<p class="page-tit mt80 fadeInUp_obj2 "><%=mbti_data.getM_MBTI()%>
 					추천 음악
 				</p>
-				<table class="music-list wrap">
-					<tr>
-						<td col="col" width="45%">곡 정보</td>
-						<td>아티스트명</td>
-						<td col="col" width="10%">재생</td>
-						<td col="col" width="10%">담기</td>
-					</tr>
-					<c:forEach items="${song_data}" var="music">
-						<tr class="trHover">
-							<td>${music.song_name}</td>
-							<td>${music.singer}</td>
-							<td>
-								<button class="play-music" type="button" alt="재생버튼">
-									<img src="./img/play_off_i.png"
-										onmouseover="this.src='./img/play_on_i.png'"
-										onmouseout="this.src='./img/play_off_i.png'">
-								</button>
-							</td>
-							<td>
-								<button class="downBtn item" type="button" alt="담기버튼">
-									<img src="./img/download_off_i.png"
-										onmouseover="this.src='./img/download_on_i.png'"
-										onmouseout="this.src='./img/download_off_i.png'">
-								</button>
-							</td>
+				<form action="GoPlay.do">
+					<table class="music-list wrap">
+						<tr>
+							<td col="col" width="45%">곡 정보</td>
+							<td>아티스트명</td>
+							<td col="col" width="10%">재생</td>
+							<td col="col" width="10%">담기</td>
 						</tr>
-					</c:forEach>
+						<c:forEach items="${music_data}" var="music">
+							<tr class="trHover">
+								<td>${music.song_name}</td>
+								<td>${music.singer}</td>
+								<td>
+									<button class="play-music" value="${music.video_src}" type="submit" alt="재생버튼">
+										<img src="./img/play_off_i.png"
+											onmouseover="this.src='./img/play_on_i.png'"
+											onmouseout="this.src='./img/play_off_i.png'">
+									</button>
+								</td>
+								<td>
+									<button class="downBtn item" type="button" alt="담기버튼">
+										<img src="./img/download_off_i.png"
+											onmouseover="this.src='./img/download_on_i.png'"
+											onmouseout="this.src='./img/download_off_i.png'">
+									</button>
+								</td>
+							</tr>
+						</c:forEach>
 
 
-				</table>
+					</table>
+				</form>
 			</div>
 
 		</section>

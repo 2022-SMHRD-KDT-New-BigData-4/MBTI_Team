@@ -13,90 +13,10 @@ public class MbtiDTO {
    private String MBTI_LONGEXP;
    private String MBTI_JOB;
    
-   private String genre_1;
-   private String genre_2;
-   private String genre_3;
-   private String song_name;
-   private String singer;
-   private int song_seq;
-   
-   
-   public void song_data(String song_name, String singer, int song_seq) {
-		this.song_name = song_name;
-		this.singer = singer;
-		this.song_seq = song_seq;
-	}
-   
-   public void genre_arr(String genre_1, String genre_2, String genre_3) {
-	this.genre_1 = genre_1;
-	this.genre_2 = genre_2;
-	this.genre_3 = genre_3;
-}
    
 public MbtiDTO() {
 	   
    }
-   public MbtiDTO(String genre_1) {
-	   genre_1 = this.genre_1; 
-
-   }
-   
-   
-// getter/setter 메소드
-   
-   public String getSong_name() {
-	return song_name;
-}
-
-public int getSong_seq() {
-	return song_seq;
-}
-
-public void setSong_seq(int song_seq) {
-	this.song_seq = song_seq;
-}
-
-public String getGenre_1() {
-	return genre_1;
-}
-
-
-public void setGenre_1(String genre_1) {
-	this.genre_1 = genre_1;
-}
-
-
-public String getGenre_2() {
-	return genre_2;
-}
-
-
-public void setGenre_2(String genre_2) {
-	this.genre_2 = genre_2;
-}
-
-
-public String getGenre_3() {
-	return genre_3;
-}
-
-
-public void setGenre_3(String genre_3) {
-	this.genre_3 = genre_3;
-}
-
-
-public void setSong_name(String song_name) {
-	this.song_name = song_name;
-}
-
-public String getSinger() {
-	return singer;
-}
-
-public void setSinger(String singer) {
-	this.singer = singer;
-}
 
 public String getMBTI_IMG() {
 	return MBTI_IMG;

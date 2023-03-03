@@ -55,9 +55,8 @@
 								<td>
 								<input 
 								name="like_song" 
-								type="checkbox" class="like-btn">
+								type="checkbox" value="${music.song_seq}" class="like-btn">
 								</td>
-								<td id="none">${music.song_seq}<td>
 							</tr>
 						</c:forEach>
 

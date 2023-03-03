@@ -13,6 +13,7 @@ import MNM.command.Command;
 import MNM.model.MbtiDTO;
 import MNM.model.MemberDAO;
 import MNM.model.MemberVO;
+import MNM.model.MusicDTO;
 
 public class JoinService implements Command {
 
@@ -41,7 +42,7 @@ public class JoinService implements Command {
 		int result = dao.join(vo);
 		
 		// 4-1. 장르 가져오기
-		List<MbtiDTO> song_genre = dao.getSong_genre(mMbti);
+		List<MusicDTO> song_genre = dao.getSong_genre(mMbti);
 		String genre_1 = song_genre.get(0).getGenre_1();
 		String genre_2 = song_genre.get(0).getGenre_2();
 		String genre_3 = song_genre.get(0).getGenre_3();
@@ -55,15 +56,12 @@ public class JoinService implements Command {
 			request.setAttribute("song_data", song_data);
 		}
 		
-		
 		// 6. result에 따른 페이지 이동(일단 로그인메인으로)
 		String moveURL = null;
 		if (result > 0) {
 			moveURL = "JoinChoicesong";
 			HttpSession session = request.getSession();
-			session.setAttribute("nickname", mNick);
-			session.setAttribute("MBTI", mMbti);
-
+			session.setAttribute("member", vo);
 		} else {
 			moveURL = "redirect:/GoMain.do";
 		}
