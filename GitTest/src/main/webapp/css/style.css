@@ -255,13 +255,20 @@ main {
     margin-right: 52px;
 }
 
+.other-mbti-wrap {
+	display: flex;
+}
+
 .other-list {
-    width: 1400px;
     display: flex;
-    justify-content: space-between;
-    overflow-x: auto;
+    /*justify-content: space-between;*/
     white-space: nowrap;
-    padding-bottom: 60px;
+}
+
+.other-tit {
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
 }
 
 .other-mbti .other-list li a span {
@@ -489,7 +496,6 @@ main {
 .mbti-list {
     width: 1400px;
     display: flex;
-    padding-bottom: 60px;
     flex-flow: row wrap;
     box-sizing: border-box;
 }
