@@ -243,6 +243,9 @@ main {
 .music-list tr td:nth-child(4) {
     text-align: center;
 }
+.music-list tr input~td+td {
+    text-align: center;
+}
 
 .music-list tr td a {
     display: inline-block;
@@ -261,7 +264,11 @@ main {
 
 .other-list {
     display: flex;
+<<<<<<< HEAD
     /*justify-content: space-between;*/
+=======
+    justify-content: space-between;
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
     white-space: nowrap;
 }
 
