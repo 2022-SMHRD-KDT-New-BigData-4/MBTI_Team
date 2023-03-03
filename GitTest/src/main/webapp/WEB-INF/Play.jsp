@@ -51,7 +51,6 @@
                     </ul>
             </ul>
     <%
-<<<<<<< HEAD
     	String play_check = request.getParameter("play_check");
   	  	List<MusicDTO> music_data = null;
 		if(play_check.equals("main")){
@@ -59,10 +58,7 @@
 		}else if(play_check.equals("mbti")){
 			music_data = (List<MusicDTO>)session.getAttribute("mbti_songlst");
 	}
-=======
-		List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
     	String song_name = request.getParameter("song_name");
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
     	String videoUrl = request.getParameter("video_url");
     	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
 	%>
