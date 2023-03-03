@@ -82,7 +82,7 @@
     <section class="play-con">
         <div class="play-container">
             <div id="playView">
-                <p class="tit"><%= song_name%></p>
+                <p class="tit"></p>
                 <iframe id="video" src="<%= videoUrl%>">
                 </iframe>
             </div>

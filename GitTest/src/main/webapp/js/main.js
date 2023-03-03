@@ -163,21 +163,17 @@ $('.like-btn').change(function() {
 })*/
 
 // main 페이지에서 하트 버튼 클릭 시 데이터 저장
-$('.main-like-btn').click(function() {
-	let song_seq =$(this).attr("main_like_song");
-	url : 'MainLikeService.java',
+$('.hi').click(function() {
+	let song_seq =$(this).val()
+	console.log(song_seq)
 	$.ajax({
-		url: url,
-		type: 'post',
+		url: "MainLikeService.do",
+		type: 'get',
 		dataType : "json",
 		data: {"song_seq": song_seq},
 		success: function(data){
-			// 요청 성공 시 실행할 코드
-			console.log("데이터 저장 완료!");
 		},
 		error: function(error){	
-			// 요청 실패 시 실행할 코드
-			console.log("데이터 저장 실패!");
 		}
 	})
 	

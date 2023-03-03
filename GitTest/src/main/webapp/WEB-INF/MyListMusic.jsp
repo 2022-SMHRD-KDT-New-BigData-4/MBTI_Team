@@ -70,7 +70,7 @@
 		<section class="sub-con">
 
 			<div>
-				<p class="page-tit mt80 fadeInUp_obj2 ">My list 제목1</p>
+				<p class="page-tit mt80 fadeInUp_obj2 ">내가 좋아하는 음악</p>
 				<table class="music-list wrap">
 					<tr>
 						<td col="col" width="45%">곡 정보</td>

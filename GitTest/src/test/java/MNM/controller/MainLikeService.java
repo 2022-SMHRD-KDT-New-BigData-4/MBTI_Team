@@ -1,23 +1,33 @@
 package MNM.controller;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.tribes.util.Arrays;
+import MNM.command.Command;
+import MNM.model.MemberDAO;
+import MNM.model.MemberVO;
+import MNM.model.MusicDTO;
 
-@WebServlet("/MainLikeService")
-public class MainLikeService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class MainLikeService implements Command {
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	public String execute(HttpServletRequest request, HttpServletResponse response) {
+		// 변경사항 삭제시킬부분
+		HttpSession session = request.getSession();
+		MemberVO vo = (MemberVO)session.getAttribute("member");
+		String song_seq = request.getParameter("song_seq");
+		
+		MusicDTO dto = new MusicDTO(Integer.parseInt(song_seq), vo.getm_Id());
+		
+		MemberDAO dao = new MemberDAO();
+		dao.save_recSong(dto);
 		
 		
+		
 
 		
+		return null;
 	}
 
 }
