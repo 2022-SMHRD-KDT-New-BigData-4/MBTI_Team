@@ -26,10 +26,19 @@
 </head>
 <body>
 	<%
+<<<<<<< HEAD
+	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
+=======
    MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 
+<<<<<<< HEAD
+	List<MusicDTO> music_data = (List<MusicDTO>) session.getAttribute("music_data");
+	%>
+=======
    List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
    %>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 	<header>
 		<nav>
 			<h1>
@@ -126,10 +135,47 @@
 					</table>
 				</form>
 			</div>
+<<<<<<< HEAD
+=======
 		</section>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 
+<<<<<<< HEAD
+		</section>
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 
+<<<<<<< HEAD
+		<section class="other-mbti">
+			<p class="page-tit mt80">다른 MBTI 추천 음악</p>
+			<div class="other-mbti-wrap">
+				<div class="mbti-list">
+					<p class="other-tit">· ENFJ와 잘 맞는 궁합</p>
+					<ul class="other-list list-mr">
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 
+<<<<<<< HEAD
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL()%></span>
+						</a></li>
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2()%></span>
+						</a></li>
+					</ul>
+				</div>
+				<div class="mbti-list">
+					<p class="other-tit">· ENFJ와 잘 안맞는 궁합</p>
+					<ul class="other-list list-mr">
+=======
 		<section class="other-mbti">
 			<p class="page-tit mt80">다른 MBTI 추천 음악</p>
 			<ul class="other-list list-mr">
@@ -162,7 +208,32 @@
 				</a></li>
 			</ul>
 		</section>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 
+<<<<<<< HEAD
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getBAD_REL()%></span>
+						</a></li>
+						<li><a
+							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2()%>">
+								<img
+								src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase()%>.png"
+								alt=""> <span class="over-box"> <i></i>
+							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2()%></span>
+						</a></li>
+					</ul>
+
+				</div>
+
+			</div>
+		</section>
+
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 	</div>
 
 	<script src="./js/popup.js"></script>
