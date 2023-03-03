@@ -133,7 +133,7 @@
 								<td>${music.song_name}</td>
 								<td>${music.singer}</td>
 								<td>
-									<button class="play-music" value="${music.video_src}" type="submit" alt="재생버튼">
+									<button class="play-music" name="video_url" value="${music.video_src}" type="submit" alt="재생버튼">
 										<img src="./img/play_off_i.png"
 											onmouseover="this.src='./img/play_on_i.png'"
 											onmouseout="this.src='./img/play_off_i.png'">

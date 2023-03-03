@@ -55,35 +55,16 @@
         </nav>
     </header>
 
-    <!-- 팝업 -->
-    <div id="myModal" class="modal">
 
-        <!-- Modal content -->
-        <div class="modal-wrap">
-            <span class="modal-icon"></span>
-            <div class="modal-content">
-
-                <p class="modal-tit">영상 제목 영역입니다</p>
-                <span class="modal-bar"></span>
-                <p class="modal-text">나만의 음악 리스트를 만들어 자주 듣는 음악을 담아 보세요!</p>
-                <input type="text" id="inputCol" value="폴더명을 입력해 주세요." style="color: #555">
-                <div class="btn-wrap">
-                    <a href="javascript:;">확인</a>
-                    <a href="#" id="close">닫기</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!-- 팝업 끝 -->
     <%
 		List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
+    	String videoUrl = request.getParameter("video_url");
 	%>
     <section class="play-con">
         <div class="play-container">
             <div id="playView">
                 <p class="tit">My list 제목1</p>
-                <iframe id="video" src="???????????????????">
+                <iframe id="video" src="<%= videoUrl%>">
                 </iframe>
             </div>
         </div>
@@ -101,7 +82,7 @@
 						out.print("<td>"+music_data.get(i).getSong_name()+"</td>");
 						out.print("<td>"+music_data.get(i).getSinger()+"</td>");%>
 						<td>
-							<button class="downBtn item" type="button">
+							<button class="downBtn item" data-src="<%=music_data.get(i).getVideo_src() %>" type="button">
 								<img src="./img/play_off_i.png"
 									onmouseover="this.src='./img/play_on_i.png'"
 									onmouseout="this.src='./img/play_off_i.png'">
@@ -110,27 +91,23 @@
 						<%	out.print("</tr>");
 					}
 				%>
-				
-				<!-- 
-				<c:forEach items="i" begin="0" end="10">
-					<tr class="trHover">
-						<td>${music_data.get(i).song_name}</td>
-						<td>${music_data.get(i).singer}</td>
-						<td>
-							<button class="downBtn item" type="button">
-								<img src="./img/play_off_i.png"
-									onmouseover="this.src='./img/play_on_i.png'"
-									onmouseout="this.src='./img/play_off_i.png'">
-							</button>
-						</td>
-					</tr>
-				</c:forEach>
-				 -->
 			</table>
 
 		</div>
 
     </section>
+    
+    <script>
+    	const buttons = document.querySelectorAll('.item');
+    	const videoIframe = document.querySelector('#video')
+    	
+    	buttons.forEach(button => {
+    		button.addEventListener('click',()=>{
+    			const videoUrl = button.dataset.src;
+    			videoIframe.src = videoUrl;
+    		});
+    	});
+    </script>
 
     <script src="./js/popup.js"></script>
 
