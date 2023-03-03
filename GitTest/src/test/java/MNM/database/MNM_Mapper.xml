@@ -39,9 +39,9 @@
 	<!-- 장르 데이터 보내고 랜덤 노래 4개씩 뽑아오기 -->
 	<select id="getSong_data" parameterType="MNM.model.MusicDTO"
 		resultType="MNM.model.MusicDTO">
-		SELECT *
+		SELECT song_seq, singer, song_name,video_src
 		FROM (
-		SELECT song_seq, singer, song_name, DBMS_RANDOM.VALUE(1,
+		SELECT song_seq, singer, song_name,video_src, DBMS_RANDOM.VALUE(1,
 		100) AS rand_value
 		FROM song_info
 		WHERE SONG_GENRE = #{genre_arr} AND

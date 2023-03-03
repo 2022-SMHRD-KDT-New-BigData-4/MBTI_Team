@@ -118,7 +118,8 @@
 									</button>
 								</td>
 								<td>
-									<input type="checkbox" class="like-btn" name="" value="">
+									<!-- 변경점 => 여기서 name과 value 값을 지정해줫습니다. -->
+									<input type="checkbox" class="main-like-btn" name="main_like_song" value="${music.song_seq}">
 								</td>
 							</tr>
 						</c:forEach>

@@ -162,6 +162,27 @@ $('.like-btn').change(function() {
 	console.log(song_seqlst);
 })*/
 
+// main 페이지에서 하트 버튼 클릭 시 데이터 저장
+$('.main-like-btn').click(function() {
+	let song_seq =$(this).attr("main_like_song");
+	url : 'MainLikeService.java',
+	$.ajax({
+		url: url,
+		type: 'post',
+		dataType : "json",
+		data: {"song_seq": song_seq},
+		success: function(data){
+			// 요청 성공 시 실행할 코드
+			console.log("데이터 저장 완료!");
+		},
+		error: function(error){	
+			// 요청 실패 시 실행할 코드
+			console.log("데이터 저장 실패!");
+		}
+	})
+	
+})
+
 /*
 $('.next-btn').click(function() {
 	$.ajax({
@@ -179,4 +200,5 @@ $('.next-btn').click(function() {
 	})
 })
 */
+
 

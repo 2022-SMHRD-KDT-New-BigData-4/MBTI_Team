@@ -66,28 +66,6 @@
 		</nav>
 	</header>
 
-	<!-- 팝업 -->
-	<div id="myModal" class="modal">
-
-		<!-- Modal content -->
-		<div class="modal-wrap">
-			<span class="modal-icon"></span>
-			<div class="modal-content">
-
-				<p class="modal-tit">My list 만들기</p>
-				<span class="modal-bar"></span>
-				<p class="modal-text">나만의 음악 리스트를 만들어 자주 듣는 음악을 담아 보세요!</p>
-				<input type="text" id="inputCol" placeholder="폴더명을 입력해 주세요."
-					style="color: #555">
-				<div class="btn-wrap">
-					<a href="javascript:;">확인</a> <a href="#" id="close">닫기</a>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<!-- 팝업 끝 -->
-
 	<div class="container-sub">
 		<section class="sub-con">
 
@@ -110,8 +88,6 @@
 										onmouseover="this.src='./img/play_on_i.png'"
 										onmouseout="this.src='./img/play_off_i.png'">
 								</button>
-							</td>
-							<td><input type="checkbox" class="like-btn" name="" value="">
 							</td>
 						</tr>
 					</c:forEach>
