@@ -51,7 +51,13 @@
                     </ul>
             </ul>
     <%
-		List<MusicDTO> music_data = (List<MusicDTO>)session.getAttribute("music_data");
+    	String play_check = request.getParameter("play_check");
+  	  	List<MusicDTO> music_data = null;
+		if(play_check.equals("main")){
+			music_data = (List<MusicDTO>)session.getAttribute("music_data");
+		}else if(play_check.equals("mbti")){
+			music_data = (List<MusicDTO>)session.getAttribute("mbti_songlst");
+	}
     	String videoUrl = request.getParameter("video_url");
     	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
 	%>

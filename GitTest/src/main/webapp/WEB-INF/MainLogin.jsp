@@ -110,6 +110,7 @@
 							<tr class="trHover">
 								<td>${music.song_name}</td>
 								<td>${music.singer}</td>
+								<input type="hidden" name = "play_check" value ="main">
 								<td>
 									<button class="play-music" name="video_url" value="${music.video_src}" type="submit" alt="재생버튼">
 										<img src="./img/play_off_i.png"

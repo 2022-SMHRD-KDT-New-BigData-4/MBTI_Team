@@ -132,8 +132,9 @@
 							<tr class="trHover">
 								<td>${song.song_name}</td>
 								<td>${song.singer}</td>
+								<input type="hidden" name = "play_check" value ="mbti">
 								<td>
-									<button class="play-music" name="video" value="${song.video_src}" type="submit" alt="재생버튼">
+									<button class="play-music" name="video_url" value="${song.video_src}" type="submit" alt="재생버튼">
 										<img src="./img/play_off_i.png"
 											onmouseover="this.src='./img/play_on_i.png'"
 											onmouseout="this.src='./img/play_off_i.png'">
