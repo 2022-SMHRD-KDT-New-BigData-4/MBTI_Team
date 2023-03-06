@@ -18,7 +18,7 @@
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./js/main.js"></script>
     <!-- 파비콘 -->
-<link rel="icon" href="./img/favicon.ico">
+	<link rel="icon" href="./img/favicon.ico">
 </head>
 
 <body>
@@ -80,6 +80,8 @@
 	        }
 		}
     </script>
+    <script src="./js/popup.js"></script>
+	<script src="./js/like.js"></script>
 </body>
 
 </html>

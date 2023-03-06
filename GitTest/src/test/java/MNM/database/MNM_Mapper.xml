@@ -69,7 +69,8 @@
 		where song_seq
 		in (REC_SONG1, REC_SONG2, REC_SONG3)
 	</select>
-
+	
+	<!-- 하트 누르면 노래 wishilist_info에 저장하기 -->
 	<insert id="save_recSong" parameterType="MNM.model.MusicDTO">
 		insert into
 		wishlist_info
@@ -79,53 +80,9 @@
 
 	<select id="login_getSong" parameterType="MNM.model.MbtiDTO"
 	resultType="MNM.model.MusicDTO">
-	 <!-- select A.* from song_info A, (select A.rec_song1, A.rec_song2, A.rec_song3 
-		from rec_song A, (select song_seq from recosong_info where mb_id=#{m_Id}) 
-		B where A.song_seq in B.song_seq) B where A.song_seq in (B.rec_song1, B.rec_song2, 
-		B.rec_song3)
-	select A.* from song_info A, member_info B, (select song_seq from wishlist_info 
-			where m_id=#{m_Id}) C where A.song_seq = C.song_seq and b.m_id = #{m_Id}
-	SELECT A.*
-	FROM song_info A, member_info B,
-	(SELECT song_seq
-	FROM wishlist_info
-	WHERE (m_id, reg_date) IN (
-	SELECT m_id, reg_date
-	FROM (
-	SELECT m_id, reg_date,
-	ROW_NUMBER() OVER (ORDER BY reg_date DESC)
-	FROM wishlist_info
-	WHERE m_id = #{m_id}
-	)
-	WHERE rownum <![CDATA[<]]>
-	7)
-	) C
-	WHERE A.song_seq = C.song_seq AND B.m_id = #{m_id}
-	
-	SELECT A.*
-	FROM song_info A, member_info B,
-	(SELECT song_seq, reg_date
-	FROM wishlist_info
-	WHERE m_id = #{m_id}
-	ORDER BY reg_date DESC
-	) C
-	WHERE A.song_seq = C.song_seq
-	AND B.m_id = #{m_id} AND ROWNUM <![CDATA[<]]> 15
-	
-	select A.rec_song1, A.rec_song2, A.rec_song3 from REC_SONG A,  
-    (SELECT A.*
-	FROM song_info A, member_info B,
-	(SELECT song_seq, reg_date
-	FROM wishlist_info
-	WHERE m_id = #{m_id}
-	ORDER BY reg_date DESC
-	) C
-	WHERE A.song_seq = C.song_seq
-	AND B.m_id = #{m_id} AND ROWNUM <![CDATA[<]]> 6) B
-    where A.song_seq = B.song_seq -->
     
     select A.* from song_info A, 
-    (select A.rec_song1, A.rec_song2 from REC_SONG A,  
+    (select A.rec_song1, A.rec_song2, A.rec_song3 from REC_SONG A,  
     (SELECT A.*
 	FROM song_info A, member_info B,
 	(SELECT song_seq, reg_date
@@ -134,9 +91,9 @@
 	ORDER BY reg_date DESC
 	) C
 	WHERE A.song_seq = C.song_seq
-	AND B.m_id = #{m_Id} AND ROWNUM <![CDATA[<]]> 10) B
+	AND B.m_id = #{m_Id} AND ROWNUM <![CDATA[<]]> 6) B
     where A.song_seq = B.song_seq) B
-    where A.song_seq in (B.rec_song1,B.rec_song2)
+    where A.song_seq in (B.rec_song1,B.rec_song2,B.rec_song3)
     
 </select>
 
@@ -146,6 +103,7 @@
     from song_info A, 
     (select * from wishlist_info where m_id = #{m_Id}) B 
     where A.song_seq = B.song_Seq
+    ORDER BY reg_date DESC
 </select>
 	
 

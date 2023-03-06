@@ -21,7 +21,7 @@
 <link rel="icon" href="./img/favicon.ico">
 <!-- jquery 연결 -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="./js/mainAni.js"></script>
+<script src="./js/main.js"></script>
 
 </head>
 <body>
@@ -103,6 +103,7 @@
 	</div>
 
 	<script src="./js/popup.js"></script>
+	<script src="./js/like.js"></script>
 
 </body>
 </html>

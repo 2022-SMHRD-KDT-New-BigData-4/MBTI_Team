@@ -49,17 +49,17 @@
 				</ul>
 			</ul>
 			<%
-    	String play_check = request.getParameter("play_check");
-  	  	List<MusicDTO> music_data = null;
-		if(play_check.equals("main")){
-			music_data = (List<MusicDTO>)session.getAttribute("music_data");
-		}else if(play_check.equals("mbti")){
-			music_data = (List<MusicDTO>)session.getAttribute("mbti_songlst");
-	}
-    	String song_name = request.getParameter("song_name");
-    	String videoUrl = request.getParameter("video_url");
-    	MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
-	%>
+			String play_check = request.getParameter("play_check");
+			List<MusicDTO> music_data = null;
+			if (play_check.equals("main")) {
+				music_data = (List<MusicDTO>) session.getAttribute("music_data");
+			} else if (play_check.equals("mbti")) {
+				music_data = (List<MusicDTO>) session.getAttribute("mbti_songlst");
+			}
+			String song_name = request.getParameter("song_name");
+			String videoUrl = request.getParameter("video_url");
+			MbtiDTO mbti_data = (MbtiDTO) session.getAttribute("mbti_data");
+			%>
 			<!-- 프로필 클릭 시 -->
 			<div id="profilePop" class="profile-wrap" style="display: none;">
 				<ul class="profile-list">
@@ -80,7 +80,7 @@
 	<section class="play-con">
 		<div class="play-container">
 			<div id="playView">
-				<iframe id="video" src="<%= videoUrl%>"> </iframe>
+				<iframe id="video" src="<%=videoUrl%>"> </iframe>
 			</div>
 		</div>
 
@@ -92,20 +92,22 @@
 					<th>재생</th>
 				</tr>
 				<%
-					for(int i = 0; i < music_data.size();i++){
-						out.print("<tr class='trHover'>");
-						out.print("<td>"+music_data.get(i).getSong_name()+"</td>");
-						out.print("<td>"+music_data.get(i).getSinger()+"</td>");%>
+				for (int i = 0; i < music_data.size(); i++) {
+					out.print("<tr class='trHover'>");
+					out.print("<td>" + music_data.get(i).getSong_name() + "</td>");
+					out.print("<td>" + music_data.get(i).getSinger() + "</td>");
+				%>
 				<td>
 					<button class="downBtn item"
-						data-src="<%=music_data.get(i).getVideo_src() %>" type="button">
+						data-src="<%=music_data.get(i).getVideo_src()%>" type="button">
 						<img src="./img/play_off_i.png"
 							onmouseover="this.src='./img/play_on_i.png'"
 							onmouseout="this.src='./img/play_off_i.png'">
 					</button>
 				</td>
-				<%	out.print("</tr>");
-					}
+				<%
+				out.print("</tr>");
+				}
 				%>
 			</table>
 
@@ -126,6 +128,7 @@
     </script>
 
 	<script src="./js/popup.js"></script>
+	<script src="./js/like.js"></script>
 
 </body>
 </html>

@@ -10,23 +10,21 @@
 }
 
 /* 애니메이션 */
-
-keyframes fadeInUp  {
-	opacity: 0;
-	transform: translate3d(0, 20%, 0);
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 30%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
 }
-
-to {
-	opacity: 1;
-	transform: translateZ(0);
-}
-
 
 .fadeInUp_obj {
-	position: relative;
-	animation: fadeInUp 0.65s;
+    position: relative;
+    animation: fadeInUp 1s;
 }
-
 /* Main --------------------------------------*/
 /* main(container 영역) */
 main {
@@ -77,7 +75,6 @@ main {
 	color: #fff;
 	padding: 20px;
 }
-
 
 .main-left a {
 	width: 280px;
@@ -258,10 +255,8 @@ main {
 }
 
 .other-list {
-<<<<<<< HEAD
-    display: flex;
-    white-space: nowrap;
-=======
+	display: flex;
+	white-space: nowrap;
 	display: flex;
 	/*justify-content: space-between;*/
 	justify-content: space-between;
@@ -270,7 +265,6 @@ main {
 
 .mbti-flex {
 	justify-content: space-between;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 }
 
 .other-tit {
@@ -502,16 +496,13 @@ main {
 }
 
 .mbti-list {
-<<<<<<< HEAD
-    display: flex;
-    flex-flow: row wrap;
-    box-sizing: border-box;
-=======
+	display: flex;
+	flex-flow: row wrap;
+	box-sizing: border-box;
 	width: 1400px;
 	display: flex;
 	flex-flow: row wrap;
 	box-sizing: border-box;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
 }
 
 .mbti-list li {
@@ -1018,3 +1009,949 @@ input.next-btn {
 #none {
 	display: none;
 }
+
+/* Main --------------------------------------*/
+/* main(container 영역) */
+main {
+	width: 1400px;
+	height: 640px;
+	padding-top: 100px;
+	margin: 90px auto 0;
+}
+
+.left-wrap {
+	display: flex;
+	align-items: center;
+}
+
+.main-left {
+	float: left;
+	margin-right: 55px;
+}
+
+.main-left .main-typo {
+	margin: 43px 0 38px;
+	color: #bbb;
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+
+.container-wrap {
+	display: flex;
+	flex-direction: row;
+}
+
+.flow_banner {
+	width: 100%;
+	margin-top: -5%;
+	position: absolute;
+	top: 50%;
+	overflow: hidden;
+	display: flex;
+	z-index: -10;
+}
+
+.flow_banner .list {
+	display: flex;
+}
+
+.flow_banner .list>li {
+	font-size: 18px;
+	color: #fff;
+	padding: 20px;
+}
+
+.main-left a {
+	width: 280px;
+	height: 55px;
+	display: block;
+	font-family: NanumSquare;
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #fff;
+	border: 2px solid #8e78ff;
+	border-radius: 30px;
+	background-color: transparent;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-left a:hover {
+	background-image: linear-gradient(to right, #8e78ff 0%, #4420ff 100%);
+	border: none;
+	transition: 0.5s;
+}
+
+/* 메인비주얼 - img 영역 */
+#slideShow {
+	position: relative;
+	right: 0;
+	flex-basis: 100%;
+	overflow: hidden;
+	display: flex;
+}
+
+.slides {
+	/* height: 640px; */
+	/* flex-basis: 90%; */
+	/* position: absolute; */
+	width: 832px;
+	height: 650px;
+	/* overflow: hidden; */
+}
+
+.container-sub {
+	max-width: 1400px;
+	min-width: 1200px;
+}
+
+/* 추천 음악 리스트 ---------------------------------------------*/
+.music-wrap {
+	margin-top: 70px;
+}
+
+.music-list {
+	width: 100%;
+	font-size: 1.2rem;
+}
+
+.music-list thead {
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.music-list tbody tr {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+	color: #bbbbbb;
+}
+
+.music-list tr td, .music-list tr th {
+	padding: 20px 0;
+}
+
+.music-list tr:nth-child(1) td {
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.music-list tr td:nth-child(1), .music-list tr td:nth-child(2) {
+	padding-left: 40px;
+}
+
+.music-list tr td:nth-child(3), .music-list tr td:nth-child(4) {
+	text-align: center;
+}
+
+.music-list tr input ~td+td {
+	text-align: center;
+}
+
+.music-list tr td a {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+
+/* 다른 MBTI 추천 음악 */
+.list-mr li {
+	margin-right: 52px;
+}
+
+.other-mbti-wrap {
+	display: flex;
+}
+
+.other-list {
+	display: flex;
+	white-space: nowrap;
+	display: flex;
+	/*justify-content: space-between;*/
+	justify-content: space-between;
+	white-space: nowrap;
+}
+
+.mbti-flex {
+	justify-content: space-between;
+}
+
+.other-tit {
+	font-weight: 500;
+	font-size: 1.3rem;
+	margin-bottom: 20px;
+}
+
+.other-mbti .other-list li a span {
+	font-family: 'yg-jalnan';
+	display: block;
+	text-align: center;
+}
+
+.other-mbti .other-list li .thum-tit {
+	margin-top: 30px;
+	font-family: 'yg-jalnan';
+	font-size: 1.5rem;
+	color: #fff;
+}
+
+.other-mbti .other-list li .thum-text {
+	margin-top: 15px;
+	font-family: 'NanumSquare';
+	font-size: 1.2rem;
+	color: #bbb;
+}
+
+.other-mbti .other-list li a {
+	position: relative;
+	display: inline-block;
+}
+
+.other-mbti .other-list li a span.over-box {
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 311px;
+	height: 311px;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.7);
+	transition: all 0.4s 0.1s;
+}
+
+.other-mbti .other-list li a:hover span.over-box {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+.other-mbti .other-list li a span.over-box i {
+	position: absolute;
+	width: 122px;
+	height: 122px;
+	display: inline-block;
+	top: 30%;
+	left: 50%;
+	margin-left: -61px;
+	transition: all 0.4s 0.05s;
+	background: url("../img/thum_hover_plus.png") no-repeat;
+}
+
+.other-mbti .other-list li a:hover span.over-box i {
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.other-mbti .other-list li a:hover span.over-box {
+	display: inline;
+}
+
+/* 각 MBTI별 제목, 서브 제목 색상 설정 -------------------------------------------*/
+/* 01 ENFJ */
+.ENFJ-tit {
+	color: #58e0a9;
+}
+
+.ENFJ-sub-tit {
+	color: #c7ffe8;
+}
+
+/* 02 ENFJ */
+.ENFP-tit {
+	color: #9dff5d;
+}
+
+.ENFP-sub-tit {
+	color: #dfffc9;
+}
+
+/* 03 ENTJ */
+.ENTJ-tit {
+	color: #ca99ed;
+}
+
+.ENTJ-sub-tit {
+	color: #edd2ff;
+}
+
+/* 04 ENTP */
+.ENTP-tit {
+	color: #fe96c8;
+}
+
+.ENTP-sub-tit {
+	color: #f8d2e4;
+}
+
+/* 05 ESFJ */
+.ESFJ-tit {
+	color: #69ffe6;
+}
+
+.ESFJ-sub-tit {
+	color: #cefff7;
+}
+
+/* 06 ESFP */
+.ESFP-tit {
+	color: #ffc86b;
+}
+
+.ESFP-sub-tit {
+	color: #fff2dc;
+}
+
+/* 07 ESTJ */
+.ESTJ-tit {
+	color: #17d0ff;
+}
+
+.ESTJ-sub-tit {
+	color: #c4f3ff;
+}
+
+/* 08 ESTP */
+.ESTP-tit {
+	color: #ffdd0f;
+}
+
+.ESTP-sub-tit {
+	color: #fff9d2;
+}
+
+/* 09 INFJ */
+.INFJ-tit {
+	color: #afe177;
+}
+
+.INFJ-sub-tit {
+	color: #edffd8;
+}
+
+/* 10 INFP */
+.INFP-tit {
+	color: #d8e259;
+}
+
+.INFP-sub-tit {
+	color: #fcffd5;
+}
+
+/* 11 INTJ */
+.INTJ-tit {
+	color: #bd6dec;
+}
+
+.INTJ-sub-tit {
+	color: #e8c2ff;
+}
+
+/* 12 INTP */
+.INTP-tit {
+	color: #daabff;
+}
+
+.INTP-sub-tit {
+	color: #efd9ff;
+}
+
+/* 13 ISFJ */
+.ISFJ-tit {
+	color: #87ffff;
+}
+
+.ISFJ-sub-tit {
+	color: #ddffff;
+}
+
+/* 14 ISFP */
+.ISFP-tit {
+	color: #e6c234;
+}
+
+.ISFP-sub-tit {
+	color: #fff6d3;
+}
+
+/* 15 ISTJ */
+.ISTJ-tit {
+	color: #77e4ff;
+}
+
+.ISTJ-sub-tit {
+	color: #c2f3ff;
+}
+
+/* 16 ISTP */
+.ISTP-tit {
+	color: #f1bc68;
+}
+
+.ISTP-sub-tit {
+	color: #fff3e0;
+}
+
+/* 각 MBTI별 제목, 서브 제목 색상 설정 끝 */
+
+/* 노래 리스트 */
+.tr_on {
+	background-color: rgba(255, 255, 255, 0.01);
+}
+
+.music-list button {
+	border: none;
+	background: none;
+}
+
+.mbti-list {
+	display: flex;
+	flex-flow: row wrap;
+	box-sizing: border-box;
+	width: 1400px;
+	display: flex;
+	flex-flow: row wrap;
+	box-sizing: border-box;
+}
+
+.mbti-list li {
+	margin-bottom: 50px;
+}
+
+/* 노래 재생 -------------------------------------------------------- */
+.play-con {
+	width: 95%;
+	margin: 90px auto 0;
+	padding-top: 90px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-between;
+}
+
+.play-container {
+	width: 57%;
+	box-sizing: border-box;
+}
+
+.play-container .tit {
+	font-size: 1.8rem;
+	font-weight: 700;
+	margin-bottom: 26px;
+}
+
+#playView {
+	position: relative;
+	/* absolute는 부모가 relative일 때 부모를 따라간다. */
+	width: 100%;
+	padding-bottom: 56.25%;
+	/* 16:9 비율 */
+}
+
+#video {
+	position: absolute;
+	width: 100%;
+	/* 부모에 맞게 꽉 채운다. */
+	height: 100%;
+}
+
+#playList {
+	width: 40%;
+	height: 584px;
+	overflow-y: scroll;
+}
+
+#playList thead {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#playList th {
+	position: sticky;
+	top: 0;
+	background-color: #020202;
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#playList th:nth-child(1), #playList th:nth-child(2) {
+	padding: 20px 0 20px 40px;
+}
+
+#playList tr td:nth-child(1), #playList tr td:nth-child(2), #playList tr th:nth-child(1),
+	#playList tr th:nth-child(2) {
+	text-align: left;
+}
+
+/* 세로 스크롤 -----------------------*/
+#playList::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* 스크롤 막대 */
+#playList::-webkit-scrollbar-thumb {
+	background-color: #5a5aff;
+	border-radius: 10px;
+}
+
+#playList::-webkit-scrollbar-thumb:active {
+	background: #8b8bff;
+}
+
+/* 스크롤 막대 외부 */
+#playList::-webkit-scrollbar-track {
+	background-color: #222;
+	border-radius: 10px;
+}
+
+/* MY 리스트 -------------------------------------------------------- */
+.myList-thum {
+	display: flex;
+	justify-content: space-between;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+.myList-thum>li>a {
+	display: block;
+	width: 311px;
+	height: 476px;
+	border-radius: 300px;
+	box-sizing: border-box;
+	text-align: center;
+	height: 476px;
+	background-color: #232323;
+	margin-bottom: 50px;
+	color: #fff;
+}
+
+.myList-thum p {
+	margin-bottom: 40px;
+}
+
+.myList-name>li {
+	font-size: 23px;
+}
+
+.myList-name>:last-child {
+	font-size: 18px;
+	color: #666666;
+	margin-top: 8px;
+}
+
+/* 회원가입 --------------------------------------------------- */
+.join-div {
+	margin-top: 70px;
+}
+
+#joinHeader {
+	font-family: 'NanumSquare';
+	font-weight: 700;
+	font-size: 50px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#joinHeaderSub {
+	font-family: 'NanumSquare';
+	font-size: 23px;
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.join-form {
+	margin: 0 auto;
+}
+
+.join-input {
+	width: 480px;
+	height: 60px;
+	border-radius: 10px;
+	padding-left: 30px;
+	background-color: #222222;
+	border: 0;
+	caret-color: #fff;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	font-family: 'NanumSquare';
+}
+
+.join-input::placeholder {
+	color: #555555;
+	font-size: 19px;
+	font-weight: 500;
+	font-family: 'NanumSquare';
+}
+
+td {
+	/* border: 1px solid blue; */
+	padding: 10px;
+}
+
+table li {
+	font-size: 17px;
+	font-weight: 400;
+	color: #999999;
+	list-style: none;
+	margin-top: -5px;
+	margin-left: 10px;
+}
+
+.gender {
+	margin-left: 60px;
+	margin-bottom: 15px;
+	accent-color: #4420ff;
+}
+
+.gender-check {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+.mbti-check {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+select {
+	width: 512px;
+	height: 60px;
+	border-radius: 10px;
+	padding-left: 30px;
+	background-color: #222222;
+	border: 0;
+	margin-bottom: 25px;
+	color: #8e78ff;
+	font-size: 19px;
+	font-weight: 500;
+	font-family: 'NanumSquare';
+}
+
+option {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400;
+	font-family: 'NanumSquare';
+}
+
+#joinSubmitBtn {
+	width: 512px;
+	height: 60px;
+	color: #fff;
+	font-size: 1.1rem;
+	font-family: NanumSquare;
+	font-weight: 500;
+	border: 2px solid #8e78ff;
+	background-color: transparent;
+	border-radius: 30px;
+	box-sizing: border-box;
+}
+
+#joinSubmitBtn:hover {
+	background-image: linear-gradient(to right, #8e78ff 0%, #4420ff 100%);
+	border: none;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+/* 회원가입 step02  - 좋아하는 노래 선택 ---------------------------------------- */
+/* input 숨겨준다 */
+input.like-btn[type="checkbox"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #fff;
+	cursor: pointer;
+	width: 18px;
+	height: 17px;
+	background: url("../img/like_off.png") no-repeat;
+}
+
+input.like-btn[type="checkbox"]:checked {
+	background: url("../img/like_on.png") no-repeat;
+}
+
+input.like-btn[type="checkbox"]:checked::after {
+	display: block;
+}
+
+input.next-btn {
+	margin: 60px auto 0;
+	width: 280px;
+	height: 55px;
+	display: block;
+	font-family: NanumSquare;
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #fff;
+	border-radius: 30px;
+	background-image: linear-gradient(to right, #8e78ff 0%, #4420ff 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tit-i {
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	background-color: #d4ccff;
+	transform: rotate(0.12turn);
+}
+
+.page-tit span:nth-child(1) {
+	font-size: 2.5rem;
+	color: #b8aaff;
+	font-weight: 700;
+	margin-right: 15px;
+}
+
+/* 로그인 ---------------------------------------------------  */
+.login-wrap {
+	position: relative;
+	height: 100vh;
+}
+
+.login-div {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#loginHeader {
+	font-family: 'NanumSquare';
+	font-weight: 700;
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#loginHeaderSub {
+	font-family: 'NanumSquare';
+	font-size: 23px;
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.login-input {
+	width: 480px;
+	height: 60px;
+	border-radius: 7px;
+	padding-left: 30px;
+	background-color: #222222;
+	border: 0;
+	margin-bottom: -5px;
+	caret-color: #fff;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	font-family: 'NanumSquare';
+}
+
+.login-input::placeholder {
+	color: #555555;
+	font-size: 18px;
+	font-weight: 500;
+	font-family: 'NanumSquare';
+}
+
+#loginSubmitBtn {
+	width: 512px;
+	height: 60px;
+	color: #fff;
+	font-size: 1.1rem;
+	font-family: NanumSquare;
+	font-weight: 500;
+	border: 2px solid #8e78ff;
+	background-color: transparent;
+	border-radius: 30px;
+	box-sizing: border-box;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#loginSubmitBtn:hover {
+	background-image: linear-gradient(to right, #8e78ff 0%, #4420ff 100%);
+	border: none;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.account-check {
+	/* border: 1px solid red; */
+	padding-right: 0;
+	font-size: 18px;
+	font-weight: 300;
+	text-align: right;
+	color: #fff;
+	width: 300px;
+}
+
+#goJoin {
+	font-weight: 600;
+}
+
+#goJoin:hover {
+	color: #8e78ff;
+	border: none;
+	transition: 0.1s;
+	cursor: pointer;
+}
+
+/* 로그인 성공 시 --------------------------------------------------- */
+.join-success {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.join-success div {
+	width: 700px;
+	padding: 80px 0;
+	text-align: center;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.join-success div span {
+	display: inline-block;
+	text-align: center;
+	padding-bottom: 20px;
+	width: 103px;
+	height: 103px;
+	background: url("../img/join_success_i.png") no-repeat;
+}
+
+.join-success span ~p {
+	padding: 20px 0 10px;
+	color: #fff;
+	font-family: 'NanumSquare';
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+.join-success span ~p+p {
+	padding: 5px 0 35px;
+	font-size: 1.8rem;
+	font-weight: normal;
+}
+
+.join-success div a {
+	margin: 0 auto;
+	width: 280px;
+	height: 55px;
+	display: block;
+	font-family: NanumSquare;
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #fff;
+	border-radius: 30px;
+	background-image: linear-gradient(to right, #8e78ff 0%, #4420ff 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* 프로필 클릭 시 - 로그아웃, 설정 */
+.profile-wrap {
+	position: absolute;
+	right: 0;
+	top: 80px;
+	margin-right: 2%;
+}
+
+.profile-list {
+	padding: 20px 30px;
+	background-color: #222;
+	border: 1px solid 333333;
+}
+
+.profile-list li:nth-child(1) {
+	font-size: 1.1rem;
+	font-weight: 500;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile-list li:not(first) {
+	padding-top: 8px;
+}
+
+.profile-list li a {
+	color: rgba(255, 255, 255, 0.65);
+	font-size: 0.9rem;
+}
+
+.profile-list li a:hover {
+	color: rgba(255, 255, 255, 1);
+	font-size: 0.9rem;
+}
+
+.profile-list li img {
+	position: relative;
+	top: -1px;
+	margin-right: 3px;
+}
+
+.video-container {
+	position: relative;
+	height: 0;
+	padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#none {
+	display: none;
+}
+
+/* 메인비주얼 */
+.flow-container {
+	position: absolute;
+	top: 50%;
+	margin-top: -5%;
+	z-index: -1;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+.flow-text {
+	  display: flex;
+      flex: 0 0 auto;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: 0.3s;
+      opacity: 10%
+  }
+
+ .flow-wrap {
+   animation: textLoop 10s linear infinite;
+   padding-right: 1.4881vw;
+   padding-right: 100px;
+ }
+ 
+ @keyframes textLoop {
+   0% {
+     -webkit-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+   }
+   100% {
+     -webkit-transform: translate3d(-100%, 0, 0);
+     transform: translate3d(-100%, 0, 0);
+   }
+ }
