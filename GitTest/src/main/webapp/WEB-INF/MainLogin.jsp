@@ -21,7 +21,7 @@
 <link rel="icon" href="./img/favicon.ico">
 <!-- jquery 연결 -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="./js/main.js"></script>
+
 
 </head>
 <body>
@@ -120,6 +120,7 @@
 											onmouseout="this.src='./img/play_off_i.png'">
 									</button>
 								</td>
+								<!-- class 를 잠시 변경 -->
 								<td><input type="checkbox" class="like-btn hi" name="main_like_song"
 									value="${music.song_seq}"></td>
 							</tr>
@@ -174,7 +175,7 @@
 				</div>
 			</div>
 		</section>
-
+		<script src="./js/main.js"></script>
 		<script src="./js/popup.js"></script>
 </body>
 </html>

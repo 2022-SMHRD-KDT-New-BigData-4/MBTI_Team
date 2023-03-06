@@ -18,16 +18,17 @@
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
     <!-- 파비콘 -->
-<link rel="icon" href="./img/favicon.ico">
+	<link rel="icon" href="./img/favicon.ico">
 
-    <!-- jquery 연결 -->
+     <!-- jquery 연결 -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script src="js/mainAni.js"></script>
-    
+    <script src="js/main.js"></script>
+
 </head>
 
 <body>
+
     <div class="main-wrap">
         <header>
             <nav>
@@ -86,6 +87,7 @@
             </ul>
         </div>
     </div>
+
     <script>
 
         $('.slides').slick({
@@ -100,9 +102,10 @@
             nextArrow: '<button class="slick-next" id="next" aria-label="Next" type="button"><img src="./img/next_btn.png" alt=""></button>',
    
         });
-
+	
 
     </script>
-    <script src="js/main.js"></script>
+
+
 </body>
 </html>

@@ -21,7 +21,7 @@
 <link rel="icon" href="./img/favicon.ico">
 <!-- jquery 연결 -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="./js/main.js"></script>
+
 
 </head>
 <body>
@@ -142,7 +142,7 @@
                            </button>
                         </td>
                         <td>
-                           <input type="checkbox" class="like-btn" name="" value="">
+                           <input type="checkbox" class="like-btn hi" name="other_like_song" value="${song.song_seq}">
                         </td>
                      </tr>
                   </c:forEach>
@@ -198,7 +198,7 @@
 		</section>
 
    </div>
-
+   <script src="./js/main.js"></script>
    <script src="./js/popup.js"></script>
 
 </body>
