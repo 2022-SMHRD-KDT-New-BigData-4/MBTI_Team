@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input onclick="login_check()" type="button" id="loginSubmitBtn" value="로그인">
+                            <input onclick="login_check()" type="button" id="loginSubmitBtn" value="로그인" onkeyup="enterkey()">
                         </td>
                     </tr>
                     <tr>
@@ -70,6 +70,16 @@
 
         </div>
     </section>
+    
+    <script>
+	    function enterkey() {
+	        if (window.event.keyCode == 13) {
+	 
+	             // 엔터키가 눌렸을 때 실행할 내용
+	             login_check();
+	        }
+		}
+    </script>
 </body>
 
 </html>

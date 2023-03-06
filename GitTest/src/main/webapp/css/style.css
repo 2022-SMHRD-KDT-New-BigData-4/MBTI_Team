@@ -264,11 +264,6 @@ main {
 
 .other-list {
     display: flex;
-<<<<<<< HEAD
-    /*justify-content: space-between;*/
-=======
-    justify-content: space-between;
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-New-BigData-4/MBTI_Team.git
     white-space: nowrap;
 }
 
@@ -501,7 +496,6 @@ main {
 }
 
 .mbti-list {
-    width: 1400px;
     display: flex;
     flex-flow: row wrap;
     box-sizing: border-box;
