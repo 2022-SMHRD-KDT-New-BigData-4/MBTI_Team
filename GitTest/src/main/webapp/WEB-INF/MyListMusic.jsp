@@ -1,6 +1,9 @@
+<%@page import="java.util.List"%>
+<%@page import="MNM.model.MusicDTO"%>
 <%@page import="MNM.model.MbtiDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,19 +21,19 @@
 <link rel="icon" href="./img/favicon.ico">
 <!-- jquery 연결 -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="./js/main.js"></script>
+<script src="./js/mainAni.js"></script>
 
 </head>
 <body>
 	<header>
 		<nav>
 			<h1>
-				<a href="GoMain.do"><img src="./img/logo.png" alt=""></a>
+				<a href="GoMainLogin.do"><img src="./img/logo.png" alt=""></a>
 			</h1>
 			<ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
-				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
+				<li><a href="MyListService.do"> <span>My 리스트</span>
 				</a></li>
 				<!-- 
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
@@ -66,28 +69,6 @@
 		</nav>
 	</header>
 
-	<!-- 팝업 -->
-	<div id="myModal" class="modal">
-
-		<!-- Modal content -->
-		<div class="modal-wrap">
-			<span class="modal-icon"></span>
-			<div class="modal-content">
-
-				<p class="modal-tit">My list 만들기</p>
-				<span class="modal-bar"></span>
-				<p class="modal-text">나만의 음악 리스트를 만들어 자주 듣는 음악을 담아 보세요!</p>
-				<input type="text" id="inputCol" placeholder="폴더명을 입력해 주세요."
-					style="color: #555">
-				<div class="btn-wrap">
-					<a href="javascript:;">확인</a> <a href="#" id="close">닫기</a>
-				</div>
-			</div>
-		</div>
-
-	</div>
-	<!-- 팝업 끝 -->
-
 	<div class="container-sub">
 		<section class="sub-con">
 
@@ -99,19 +80,18 @@
 						<td col="col" width="45%">아티스트명</td>
 						<td>재생</td>
 					</tr>
-					<c:forEach items="${music_data}" var="music">
+					<c:forEach items="${myList_song}" var="song">
 						<tr class="trHover">
-							<td>${music.song_name}</td>
-							<td>${music.singer}</td>
+							<td>${song.song_name}</td>
+							<td>${song.singer}</td>
+							<input type="hidden" name="play_check" value="main">
 							<td>
 								<button class="play-music" name="video_url"
-									value="${music.video_src}" type="submit" alt="재생버튼">
+									value="${song.video_src}" type="submit" alt="재생버튼">
 									<img src="./img/play_off_i.png"
 										onmouseover="this.src='./img/play_on_i.png'"
 										onmouseout="this.src='./img/play_off_i.png'">
 								</button>
-							</td>
-							<td><input type="checkbox" class="like-btn" name="" value="">
 							</td>
 						</tr>
 					</c:forEach>

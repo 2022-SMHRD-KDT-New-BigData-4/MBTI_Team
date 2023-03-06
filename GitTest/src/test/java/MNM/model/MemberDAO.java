@@ -139,6 +139,20 @@ public List<MusicDTO> Login_getSong(String id) {
     return music_data;
 }
 
+public List<MusicDTO> getMyList_song(String id) {
+
+	SqlSession sqlSession = sqlSessionFactory.openSession(true);
+
+    List<MusicDTO> music_data = null;
+    try {
+    	music_data = sqlSession.selectList("getMyList_song", id);
+    	// System.out.println("가져온 뮤직데이터 : " + music_data); // o
+    } finally {
+       sqlSession.close();
+    }
+    return music_data;
+}
+
 
 
 }

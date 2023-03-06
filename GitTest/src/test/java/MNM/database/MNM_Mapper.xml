@@ -39,8 +39,12 @@
 	<!-- 장르 데이터 보내고 랜덤 노래 4개씩 뽑아오기 -->
 	<select id="getSong_data" parameterType="MNM.model.MusicDTO"
 		resultType="MNM.model.MusicDTO">
+
+
 		SELECT song_seq, singer, song_name, video_src
+
 		FROM (
+
 		SELECT song_seq, singer, song_name, video_src, DBMS_RANDOM.VALUE(1,
 		100) AS rand_value
 		FROM song_info
@@ -96,7 +100,7 @@
 	WHERE rownum <![CDATA[<]]>
 	7)
 	) C
-	WHERE A.song_seq = C.song_seq AND B.m_id = #{m_id}-->
+	WHERE A.song_seq = C.song_seq AND B.m_id = #{m_id}
 	
 	SELECT A.*
 	FROM song_info A, member_info B,
@@ -107,6 +111,41 @@
 	) C
 	WHERE A.song_seq = C.song_seq
 	AND B.m_id = #{m_id} AND ROWNUM <![CDATA[<]]> 15
+	
+	select A.rec_song1, A.rec_song2, A.rec_song3 from REC_SONG A,  
+    (SELECT A.*
+	FROM song_info A, member_info B,
+	(SELECT song_seq, reg_date
+	FROM wishlist_info
+	WHERE m_id = #{m_id}
+	ORDER BY reg_date DESC
+	) C
+	WHERE A.song_seq = C.song_seq
+	AND B.m_id = #{m_id} AND ROWNUM <![CDATA[<]]> 6) B
+    where A.song_seq = B.song_seq -->
+    
+    select A.* from song_info A, 
+    (select A.rec_song1, A.rec_song2 from REC_SONG A,  
+    (SELECT A.*
+	FROM song_info A, member_info B,
+	(SELECT song_seq, reg_date
+	FROM wishlist_info
+	WHERE m_id = #{m_Id}
+	ORDER BY reg_date DESC
+	) C
+	WHERE A.song_seq = C.song_seq
+	AND B.m_id = #{m_Id} AND ROWNUM <![CDATA[<]]> 10) B
+    where A.song_seq = B.song_seq) B
+    where A.song_seq in (B.rec_song1,B.rec_song2)
+    
+</select>
+
+
+<select id="getMyList_song" parameterType="java.lang.String" resultType="MNM.model.MusicDTO">
+    select A.* 
+    from song_info A, 
+    (select * from wishlist_info where m_id = #{m_Id}) B 
+    where A.song_seq = B.song_Seq
 </select>
 	
 

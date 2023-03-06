@@ -30,44 +30,44 @@
 
 	List<MusicDTO> music_data = (List<MusicDTO>) session.getAttribute("music_data");
 	%>
-	<header>
-		<nav>
-			<h1>
-				<a href="GoMainLogin.do"><img src="./img/logo.png" alt=""></a>
-			</h1>
-			<ul class="main-menu">
-				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
-				</a></li>
-				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
-				</a></li>
-				<!-- 
+
+	<nav>
+		<h1>
+			<a href="GoMainLogin.do"><img src="./img/logo.png" alt=""></a>
+		</h1>
+		<ul class="main-menu">
+			<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
+			</a></li>
+			<li><a href="MyListService.do"> <span>My 리스트</span>
+			</a></li>
+			<!-- 
             <li><a href="GoMyList.do"> <span>My 리스트</span>
             </a></li>
             <li><a href="GoPlay.do"> <span><img
                      src="./img/search_i.png" alt=""> 검색</span>
             </a></li> -->
+		</ul>
+		<ul class="util-menu dis-non">
+			<ul class="util-menu">
+				<li><a href="GoJoinForm.do">JOIN</a></li>
+				<li><a href="GoLoginForm.do"><img
+						src="./img/util_login_i.png" alt=""> LOGIN</a></li>
 			</ul>
-			<ul class="util-menu dis-non">
-				<ul class="util-menu">
-					<li><a href="GoJoinForm.do">JOIN</a></li>
-					<li><a href="GoLoginForm.do"><img
-							src="./img/util_login_i.png" alt=""> LOGIN</a></li>
-				</ul>
+		</ul>
+		<!-- 프로필 클릭 시 -->
+		<div id="profilePop" class="profile-wrap" style="display: none;">
+			<ul class="profile-list">
+				<li><%=mbti_data.getM_MBTI()%> ${member.m_Nick}님</li>
+				<li><a href="LogoutService.do"><img
+						src="./img/logout_i.png" alt=""> 로그아웃</a></li>
 			</ul>
-			<!-- 프로필 클릭 시 -->
-			<div id="profilePop" class="profile-wrap" style="display: none;">
-				<ul class="profile-list">
-					<li><%=mbti_data.getM_MBTI()%> ${member.m_Nick}님</li>
-					<li><a href="LogoutService.do"><img
-							src="./img/logout_i.png" alt=""> 로그아웃</a></li>
-				</ul>
-			</div>
-			<!-- 프로필 -->
-			<div id="profileClick" class="profile">
-				<a href="javascript:doDisplay();"><img
-					src="./img/profile_icon.png" alt=""></a>
-			</div>
-		</nav>
+		</div>
+		<!-- 프로필 -->
+		<div id="profileClick" class="profile">
+			<a href="javascript:doDisplay();"><img
+				src="./img/profile_icon.png" alt=""></a>
+		</div>
+	</nav>
 	</header>
 
 	<div class="container-sub">
@@ -119,8 +119,8 @@
 											onmouseout="this.src='./img/play_off_i.png'">
 									</button>
 								</td>
-								<td><input type="checkbox" class="like-btn" name=""
-									value=""></td>
+								<td><input type="checkbox" class="like-btn hi"
+									name="main_like_song" value="${music.song_seq}"></td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -134,47 +134,55 @@
 			<div class="other-mbti-wrap">
 				<div class="mbti-lst">
 
-					<p class="other-tit">ENFJ와 잘 맞는 궁합</p>
 					<ul class="other-list list-mr">
 
-						<li><a
-							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL()%>">
-								<img
-								src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase()%>.png"
-								alt=""> <span class="over-box"> <i></i>
-							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL()%></span>
-						</a></li>
-						<li><a
-							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2()%>">
-								<img
-								src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase()%>.png"
-								alt=""> <span class="over-box"> <i></i>
-							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2()%></span>
-						</a></li>
-					</ul>
-				</div>
-				<div class="mbti-lst">
-					<p class="other-tit">ENFJ와 잘 안맞는 궁합</p>
-					<ul class="other-list list-mr">
+						<div class="mbti-list">
+							<p class="other-tit">
+								<%=mbti_data.getM_MBTI()%>와 잘 맞는 궁합
+							</p>
+							<ul class="other-list list-mr">
+								<li><a
+									href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL()%>">
+										<img
+										src="./img/thum_<%=mbti_data.getGOOD_REL().toLowerCase()%>.png"
+										alt=""> <span class="over-box"> <i></i>
+									</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL()%></span>
+								</a></li>
+								<li><a
+									href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2()%>">
+										<img
+										src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase()%>.png"
+										alt=""> <span class="over-box"> <i></i>
+									</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2()%></span>
+								</a></li>
+							</ul>
+						</div>
 
-						<li><a
-							href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL()%>">
-								<img
-								src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase()%>.png"
-								alt=""> <span class="over-box"> <i></i>
-							</span> <span class="thum-tit"><%=mbti_data.getBAD_REL()%></span>
-						</a></li>
-						<li><a
-							href="MbtiMusicService.do?mbti=<%=mbti_data.getGOOD_REL2()%>">
-								<img
-								src="./img/thum_<%=mbti_data.getGOOD_REL2().toLowerCase()%>.png"
-								alt=""> <span class="over-box"> <i></i>
-							</span> <span class="thum-tit"><%=mbti_data.getGOOD_REL2()%></span>
-						</a></li>
-					</ul>
-				</div>
+						<div class="mbti-lst">
 
-			</div>
+							<div class="mbti-list">
+								<p class="other-tit">
+									<%=mbti_data.getM_MBTI()%>와 잘 안맞는 궁합
+								</p>
+
+								<ul class="other-list list-mr">
+									<li><a
+										href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL()%>">
+											<img
+											src="./img/thum_<%=mbti_data.getBAD_REL().toLowerCase()%>.png"
+											alt=""> <span class="over-box"> <i></i>
+										</span> <span class="thum-tit"><%=mbti_data.getBAD_REL()%></span>
+									</a></li>
+									<li><a
+										href="MbtiMusicService.do?mbti=<%=mbti_data.getBAD_REL2()%>">
+											<img
+											src="./img/thum_<%=mbti_data.getBAD_REL2().toLowerCase()%>.png"
+											alt=""> <span class="over-box"> <i></i>
+										</span> <span class="thum-tit"><%=mbti_data.getBAD_REL2()%></span>
+									</a></li>
+								</ul>
+							</div>
+						</div>
 		</section>
 
 	</div>

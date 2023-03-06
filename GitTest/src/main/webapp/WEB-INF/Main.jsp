@@ -23,7 +23,7 @@
     <!-- jquery 연결 -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/mainAni.js"></script>
     
 </head>
 
@@ -103,6 +103,7 @@
 
 
     </script>
- 
+
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -30,7 +30,7 @@
 			<ul class="main-menu">
 				<li><a href="GoMbtiMusicBox.do"> <span>MBTI 추천 음악</span>
 				</a></li>
-				<li><a href="GoMyListMusic.do"> <span>My 리스트</span>
+				<li><a href="MyListService.do"> <span>My 리스트</span>
 				</a></li>
 				<!-- 
 				<li><a href="GoMyList.do"> <span>My 리스트</span>
@@ -67,7 +67,7 @@
 
 	<div class="container-sub other-mbti">
 		<section class="sub-con">
-			<ul class="other-list mbti-list">
+			<ul class="other-list mbti-list mbti-flex">
 				<li><a href="MbtiMusicService.do?mbti=ISTJ"> <img
 						src="./img/thum_istj.png" alt=""> <span
 						class="over-box"> <i></i>

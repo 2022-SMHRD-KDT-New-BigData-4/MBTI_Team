@@ -28,6 +28,13 @@ public class MusicDTO {
 
 
 
+	public MusicDTO(int song_seq) {
+		this.song_seq = song_seq;
+	}
+
+
+
+
 	public void setGenre_1(String genre_1) {
 		this.genre_1 = genre_1;
 	}
